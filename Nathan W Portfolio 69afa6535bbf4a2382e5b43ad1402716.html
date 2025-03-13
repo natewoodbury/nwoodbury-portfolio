@@ -1,0 +1,738 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Nathan W | Portfolio</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: undefined; }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-transparentGray { background-color: undefined; }
+.select-value-color-translucentGray { background-color: undefined; }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="69afa653-5bbf-4a23-82e5-b43ad1402716" class="page sans"><header><div class="page-header-icon undefined"><img class="icon" src="https://www.notion.so/icons/conifer-tree_green.svg"/></div><h1 class="page-title">Nathan W | Portfolio</h1><p class="page-description"></p></header><div class="page-body"><div id="1497c237-4629-44ac-b9c0-8baeb3370280" class="column-list"><div id="9962a0e8-ef65-41c1-81dd-9ee8ebc96396" style="width:56.25%" class="column"><h3 id="28ce12f1-9294-4b0c-bf58-4325d4f2648f" class="">👋 I’m <mark class="highlight-blue">Nathan W.</mark> - a product guy based out of Salt Lake.</h3><p id="77703ce2-4deb-40e4-82b2-4e7f2ff8c4be" class="block-color-default">I’ve been building designs and software experiences for over 6 years and love finding unique solutions to interesting problems. I believe in designing <strong>buildable</strong> solutions to make the handoff to engineering as seamless as possible. </p><p id="f725fffe-0c04-426c-b339-317c01b2be86" class="">
+</p></div><div id="7ab755e3-10ea-4ef2-8373-d58124953d84" style="width:43.75%" class="column"><figure id="68187acc-b687-4f2d-a208-50d0d1274973" class="image"><a href="Nathan%20W%20Portfolio%2069afa6535bbf4a2382e5b43ad1402716/profile-pic_(8).png"><img style="width:289.625px" src="Nathan%20W%20Portfolio%2069afa6535bbf4a2382e5b43ad1402716/profile-pic_(8).png"/></a></figure><p id="1ac819ce-f66f-4a83-91e2-aaf6032ff407" class="">
+</p></div></div><p id="f488d9e9-47ee-4f10-b7c9-e3f3c75b947a" class="">
+</p><p id="b7a3beda-5927-4417-881a-540f52c60f31" class="">
+</p><p id="7718d209-b2de-4fc2-ba19-017f4cd845a5" class="">
+</p><h1 id="cd85afce-0c1e-4eb6-b27e-d85147766b40" class="">Selected Projects</h1><hr id="4ade63e3-68b0-4f02-ad4f-313cf8e3dc63"/><div id="d85166be-1277-4ecd-941a-d58b003b9c30" class="column-list"><div id="e6d57efb-acc0-4dbf-b82a-4396afe8adc4" style="width:56.25%" class="column"><figure id="f3c93661-34de-49fd-a856-1d1bb558766c" class="image"><a href="Nathan%20W%20Portfolio%2069afa6535bbf4a2382e5b43ad1402716/brick-kiln2.png"><img style="width:4500px" src="Nathan%20W%20Portfolio%2069afa6535bbf4a2382e5b43ad1402716/brick-kiln2.png"/></a></figure></div><div id="8794baef-1552-4417-9bd1-001b5b5cddb7" style="width:43.75%" class="column"><h2 id="08bea14d-4e1d-4c63-971a-478e2616d398" class="">Brick Kiln</h2><figure class="block-color-purple_background callout" style="white-space:pre-wrap;display:flex" id="dd9bfc0b-49bd-4b5d-a68b-d095511076cd"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/home_gray.svg"/></div><div style="width:100%">Property Management &amp; CRM</div></figure><p id="375fef05-60e3-4c50-a649-c5aa7b04edb4" class="block-color-default">A complex connected management system for the acquisition, renovation and disposition of real estate contracts. </p><p id="5362034d-7e03-425f-ac11-e553e696869b" class="block-color-blue"><a href="Nathan%20W%20Portfolio%2069afa6535bbf4a2382e5b43ad1402716/Projects%209fcd98cc2f25425c8198a588b958151e/Property%20Managment%20&amp;%20CRM%20Brick%20Kiln%200a8252d1b2b246e78e2ebe88c33b18c3.html">View Project</a></p><p id="6c43f4ca-a821-43c7-9117-9592b541d4bb" class="">
+</p></div></div><p id="7d2a5140-9861-4c0b-9378-1a3774702bb5" class="block-color-default">
+</p><p id="a5aa5bd8-6582-4f44-8990-0f215f4792a8" class="block-color-default">
+</p><div id="5f5581a4-e2b2-4909-bbef-53ec741bb646" class="column-list"><div id="f7d104ef-9696-4bc1-a0b0-c6426e649810" style="width:50%" class="column"><h2 id="74f0edbc-7d01-4663-ba7c-bd29066f082e" class="block-color-default">My Brick Offer</h2><figure class="block-color-blue_background callout" style="white-space:pre-wrap;display:flex" id="593abc36-49e7-465f-af5f-af0047c762d6"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/window_gray.svg"/></div><div style="width:100%">Lead Generation &amp; Contract Negotiation</div></figure><p id="b4226036-2fee-4d2b-957e-d4d3760a4a98" class="block-color-default">A capture service and customer communication tool for presenting real estate offers and signing contracts.</p><p id="331a90c4-62a9-455c-b76c-d33c7ccc2b71" class="block-color-blue"><a href="Nathan%20W%20Portfolio%2069afa6535bbf4a2382e5b43ad1402716/Projects%209fcd98cc2f25425c8198a588b958151e/Lead%20Gen%20My%20Brick%20Offer%20efb05b5f732c45deaa31cdfff0266f9a.html">View Project</a></p><p id="38d35412-839f-4779-8647-50e112a44007" class="">
+</p></div><div id="a0573d49-5da9-4710-88f2-b160212a453a" style="width:50%" class="column"><figure id="eb41525f-9463-4f63-ad7a-3b5ccb32c321" class="image"><a href="Nathan%20W%20Portfolio%2069afa6535bbf4a2382e5b43ad1402716/mybrickoffer-mobile-mockup.png"><img style="width:480px" src="Nathan%20W%20Portfolio%2069afa6535bbf4a2382e5b43ad1402716/mybrickoffer-mobile-mockup.png"/></a></figure></div></div><p id="7ff49dda-d9a1-47ba-8ab4-92d5b2c713fc" class="block-color-default">
+</p><p id="7a0c9043-6efc-4866-92ba-9331e0d4ace0" class="block-color-default">
+</p><p id="858796a1-05f7-4082-b33d-b0ae47c6e624" class="block-color-default">
+</p><div id="d0e81bfc-ed55-465f-8d60-408c6b8ebe49" class="column-list"><div id="67630732-ae23-40ad-a332-affd9d4a1c20" style="width:56.25%" class="column"><figure id="e7834625-a564-43db-be9c-465f6d51ea09" class="image"><a href="Nathan%20W%20Portfolio%2069afa6535bbf4a2382e5b43ad1402716/brickbrandign2.png"><img style="width:4500px" src="Nathan%20W%20Portfolio%2069afa6535bbf4a2382e5b43ad1402716/brickbrandign2.png"/></a></figure><p id="c553b244-103b-4658-ba34-97e2f5074fb3" class="">
+</p></div><div id="7b39001a-f00f-456b-8649-4925e6506fc0" style="width:43.75000000000001%" class="column"><h2 id="016fec09-e254-4f61-8960-3c1c399e7080" class="">Brick Branding</h2><figure class="block-color-teal_background callout" style="white-space:pre-wrap;display:flex" id="f2761967-9214-432a-877d-52eca7fe9535"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/emoji-grinning_gray.svg"/></div><div style="width:100%">Logo &amp; Visual Identity</div></figure><p id="00e8b5c3-f9ed-4ebf-b5ab-eabd9ef4260a" class="block-color-default">Development of a visual identity, logos, guides and documentation for the Brick brand and its sub-brands.</p><p id="7dca5914-e0c9-42a3-a68b-0b071b25e4ac" class="block-color-blue"><a href="Nathan%20W%20Portfolio%2069afa6535bbf4a2382e5b43ad1402716/Projects%209fcd98cc2f25425c8198a588b958151e/Logos%20&amp;%20Branding%20Brick%2034515155d00b4c4fa435f9905e7d1774.html">View Project</a></p><p id="2c45d8ce-1e8f-4b6c-a9c7-bde954b1107e" class="">
+</p></div></div><p id="d3ff22bb-2082-4d9e-9c01-27d463c85621" class="block-color-default">
+</p><p id="41506807-9982-440d-bfed-650a2c9d60e1" class="block-color-default">
+</p><p id="06ac21a6-5ae8-48f3-ad04-176d1e1e1470" class="block-color-default">
+</p><div id="da5c5224-c378-4d21-9346-029626ad2be8" class="column-list"><div id="f50979e8-cff2-420a-875b-09df8d4954f9" style="width:43.75%" class="column"><h2 id="840fc9dd-2d20-46c2-9575-eb4ac2149ff0" class="block-color-default">My School Dance</h2><figure class="block-color-pink_background callout" style="white-space:pre-wrap;display:flex" id="5acfdf13-7dd8-4332-94f1-71c2145c85c6"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/dance_gray.svg"/></div><div style="width:100%">Mobile UI/UX | Event Planning</div></figure><p id="255f56c7-02fb-4d66-a7d0-77acacb1f507" class="block-color-default">Simple mobile app for cataloguing and managing the attendees to social events and school dances. </p><p id="c2e8bf37-0b78-4146-8206-bbe5665c025b" class="block-color-blue"><a href="Nathan%20W%20Portfolio%2069afa6535bbf4a2382e5b43ad1402716/Projects%209fcd98cc2f25425c8198a588b958151e/Event%20Management%20My%20School%20Dance%202bdd0f3fe39944d78b70e92b84ec8dd3.html">View Project</a></p><p id="313aa9a2-133e-42b1-912a-2abd57ef8ed0" class="">
+</p></div><div id="62a3b98d-7a81-4c34-bf63-4a2968d9aebc" style="width:56.25%" class="column"><figure id="d2b7671f-5bc0-43ae-8f43-4f8fc442aa0f" class="image"><a href="Nathan%20W%20Portfolio%2069afa6535bbf4a2382e5b43ad1402716/4.png"><img style="width:4500px" src="Nathan%20W%20Portfolio%2069afa6535bbf4a2382e5b43ad1402716/4.png"/></a></figure></div></div><p id="7b00b86e-8459-4fe8-88fb-d9fd8f17980e" class="">
+</p><p id="f12110ac-e853-403b-91c8-b64b6d1b4936" class="">
+</p><p id="48c2900b-77b6-4d7c-a18d-adef259d23ac" class="">
+</p><p id="68c310c5-ce94-4d73-a881-41a8afd1339a" class="">
+</p><p id="a2c12585-958a-4796-8da0-286957635845" class="">
+</p><hr id="28f6c356-8c70-48b8-bb62-d89e50389c3f"/><figure id="9fafc3ff-1efe-48ef-953a-300b2e35d6e9" class="image"><a href="https://images.unsplash.com/photo-1541462608143-67571c6738dd?ixlib=rb-4.0.3&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb"><img style="width:100%" src="https://images.unsplash.com/photo-1541462608143-67571c6738dd?ixlib=rb-4.0.3&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb"/></a></figure><h1 id="127649ae-8a50-4043-877c-da03611efcc1" class="">My Experience </h1><hr id="852fdf6d-e3dc-4281-bcc1-d87fcc5e7290"/><p id="29256c40-b7c7-4fa0-9c68-4eadd2b70cb3" class="block-color-default">Passionate and creative Graphic and Product Designer with over 7 years of experience crafting visually compelling designs and user-focused solutions. Proficient in Adobe Creative Suite, Figma, and other design software. Brings a passion for blending artistry with functionality, resulting in captivating graphics, intuitive user interfaces, and thorough documentation.  Managed projects from property management and education  to complete logo and brand development. </p><p id="c6f8aaec-3771-4fce-a95c-12c1dffb089c" class="">
+</p><h3 id="244dfed1-be87-4251-84eb-c3c914fe5f9d" class=""><strong>Key Skills</strong></h3><div id="fe7b4f8c-e40d-4422-90a3-34b4f20dc84d" class="column-list"><div id="21e63a68-490b-4975-a557-c3ab007e5539" style="width:33.333333333333336%" class="column"><ul id="d415d75d-27f3-4df1-8827-4446341fc2e0" class="bulleted-list"><li style="list-style-type:disc">User-Centric Design</li></ul><ul id="6090742b-3aa9-4bd7-b728-ec89c92a7abb" class="bulleted-list"><li style="list-style-type:disc">Data Visualization</li></ul><ul id="c469ec6e-b617-449e-a026-962c4d3dd928" class="bulleted-list"><li style="list-style-type:disc">UI/UX Wireframing</li></ul><ul id="e294cd97-9fe1-4860-8ef5-28734a49999d" class="bulleted-list"><li style="list-style-type:disc">Design Documentation</li></ul></div><div id="a4c3049f-a8d1-48c1-afcd-105cf074d0fc" style="width:33.333333333333336%" class="column"><ul id="c22abc36-46e6-4e8d-a8d7-4eb36963262c" class="bulleted-list"><li style="list-style-type:disc">Logo Design</li></ul><ul id="64b75de3-3b12-4852-86b0-51320e1eeba8" class="bulleted-list"><li style="list-style-type:disc">Graphic Design</li></ul><ul id="8e03d470-cd53-441d-97a7-4fa794328229" class="bulleted-list"><li style="list-style-type:disc">Interaction Design</li></ul><ul id="94a4a567-3fa0-4f13-8712-2cef183aa2ef" class="bulleted-list"><li style="list-style-type:disc">End-to-End Design</li></ul></div><div id="85310075-02fa-46fa-a879-4afe53b44d10" style="width:33.33333333333333%" class="column"><ul id="924e465d-c136-4821-83be-09c6c87ce036" class="bulleted-list"><li style="list-style-type:disc">User Research</li></ul><ul id="9ebcae09-d4a9-412b-aeb4-531c29c8c19b" class="bulleted-list"><li style="list-style-type:disc">Design Systems</li></ul><ul id="6fc2940b-d07e-4307-a48f-343886687e73" class="bulleted-list"><li style="list-style-type:disc">User Testing</li></ul><ul id="594973fd-a873-4083-b8c9-4f786166a382" class="bulleted-list"><li style="list-style-type:disc">Brand Development</li></ul></div></div><hr id="c28e6184-1bba-415e-b000-90fdc1fac130"/><p id="5e7867e7-9583-497e-b6f8-1c1e55c82679" class="block-color-blue_background"><strong>PRODUCT DESIGNER/MANAGER</strong></p><p id="da57612b-13ef-45f8-8f6b-87068e41799f" class=""><em>Brick | Dec 2020-Mar 2023</em></p><ul id="a50da373-b99c-4811-9e7f-574ee4f8763f" class="bulleted-list"><li style="list-style-type:disc">Developed and maintained comprehensive brand guidelines for Brick, ensuring consistent visual identity, messaging, and tone across all marketing materials and communications.</li></ul><ul id="bfecd94a-1755-49d8-ad2c-73f5fc4b12ca" class="bulleted-list"><li style="list-style-type:disc">Designed and implemented user-friendly onboarding strategies to educate and empower users in the home-selling process with Brick, resulting in a reduction in confusion and improved user satisfaction</li></ul><ul id="d675c3ca-75bd-4aa3-8755-d8473d3cf833" class="bulleted-list"><li style="list-style-type:disc">Collaborated with stakeholders and development team to design wireframes, interactive prototypes, and detailed specifications, optimizing development efficiency and fostering effective cross-functional communication.</li></ul><ul id="4e0af7e0-4eb7-49b1-a273-7eaf80abbe9d" class="bulleted-list"><li style="list-style-type:disc">Led an Agile/Scrum engineering team in the development of web applications for acquiring, rehabilitating, and underwriting more than 2800 real estate opportunities</li></ul><ul id="f5722061-e2d4-4bc1-b863-8e3465451789" class="bulleted-list"><li style="list-style-type:disc">Directed external copywriting, SEO, and graphic design teams to produce engaging and SEO-optimized content resulting in increased site traffic and conversion rates for the My Brick Offer campaign.</li></ul><p id="23512791-b4fe-4a27-a158-4a48c6073fdf" class="block-color-blue_background"><strong>ASSOCIATE PRODUCT OWNER, VISUAL DESIGNER</strong></p><p id="1f4efa60-aef1-4a20-acd7-7b2ceeb5f943" class=""><em>Outcode Software | Nov 2019-Dec 2020</em></p><ul id="ce4835ca-3f62-452d-97dd-7f95488ccc94" class="bulleted-list"><li style="list-style-type:disc">Crafted UI/UX wireframes and prototypes providing essential references for client evaluation and guiding the engineering team towards efficient implementation.</li></ul><ul id="db0f5284-f14a-414e-a22f-6722dc42545a" class="bulleted-list"><li style="list-style-type:disc">Led multiple Agile/Scrum off-shore development teams to build web, mobile, and enterprise software solutions in the legal, healthcare education, social media, and shipping and logistics industries.</li></ul><ul id="8c92a374-ae3f-4ed5-b975-206b57f473c1" class="bulleted-list"><li style="list-style-type:disc">Managed the growth of a healthcare nursing education platform from 2,000 to 15,000 users utilizing Azure Web Services and analytics resulting in reduced downtime and increased stability.</li></ul><p id="b56e383b-bdc3-435a-99b6-a9617cc76d32" class="block-color-blue_background"><strong>GRAPHIC/PRODUCT DESIGNER</strong></p><p id="2744ae0c-4a4e-45d8-b2f0-ac822e7cce8a" class=""><em>Biofire Defense | Sept 2015-Aug 2019</em></p><ul id="77f0ad00-5c02-4545-b9ae-ea6ecde66c74" class="bulleted-list"><li style="list-style-type:disc">Developed graphics and diagnostic documentation using the Adobe Creative Suite for a successful In Vitro Diagnostic Submission to the United States Food and Drug Administration.</li></ul><ul id="37d8f27d-94ae-48cf-8f67-2c7ebe2509d2" class="bulleted-list"><li style="list-style-type:disc">Created user-centric web interfaces to visually present complex diagnostic data and analytics, enhancing nationwide awareness of pathogen trends and promoting data transparency.</li></ul><ul id="0116e4b9-b2e6-4391-8ea4-58444912e740" class="bulleted-list"><li style="list-style-type:disc">Led end-to-end design for the interface and experience on the RAZOR Mk II BioDetection System.</li></ul><h1 id="9df38dbe-2de2-4405-819b-821c2f9098d3" class="">My Education</h1><hr id="00462e56-df93-4471-ae13-01e38adb13a9"/><p id="06b0376b-a44a-4171-9671-1ced0494ac72" class="block-color-blue_background"><strong>Brigham Young University – Idaho</strong></p><p id="6b0e3ed4-19ef-4a4a-a8d8-5bb9d52d2ed8" class=""><strong> </strong>B.S. in Business Management, Marketing | 2014</p><p id="3eece955-734c-41e5-be82-311fb2fe7f80" class=""><em>Marketing Manager at BYU-I Recycling Center, Integrated Business Core: Weather Ninja</em></p><p id="764697a2-dae1-4ca8-a856-09924a47afc8" class="">
+</p><p id="733f3510-fabe-4249-a007-3d114bb9a41e" class="block-color-blue_background"><strong>DevMountain</strong></p><p id="f92d81f3-5d9e-471b-946f-866a3b74acfd" class=""><strong> </strong>UI/UX Design Certificate | 2016</p><p id="068548a2-fb0c-4ced-beb4-a7cf47a28eba" class=""><em>Product Design, User Research, Prototyping &amp; Wireframes, Information Architecture</em></p><p id="21602198-9827-46c9-b75a-508a84a46294" class="">
+</p><p id="71c6a264-6dde-4d26-a335-9f6df850b253" class="">
+</p><p id="38d43e68-33f6-4f0c-9f69-6f2a04b0626a" class="">
+</p><p id="572b281b-c5f0-4c3a-b253-bbb30215fab9" class="">
+</p><p id="bbb4d426-d2fb-4228-a79a-d94b8ad5a638" class="">
+</p><p id="f635a292-372b-4624-8657-2b7016bec4ba" class="">
+</p><p id="aca896ab-87f3-472f-afe5-10b45bd731e6" class="">
+</p><p id="3f963cba-c3ce-448b-9567-d9783b71754a" class="">
+</p><figure id="37f13bdd-8399-4aab-b34a-e33a829a6448" class="image"><a href="https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?ixlib=rb-4.0.3&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb"><img style="width:100%" src="https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?ixlib=rb-4.0.3&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb"/></a></figure><p id="ee2968a0-6ee7-4621-865e-585348b2cd23" class="">
+</p><p id="69961653-8bb3-4966-a2af-6b88b54b9611" class="">
+</p><p id="86c72e61-4331-4e4c-8fb2-82af2ef1bc82" class="">
+</p><p id="ea865e99-f0bd-4229-a3c6-a162c0ce7909" class="">
+</p><p id="4b3205da-4ed7-443d-ae6c-2fffb0e5b9ee" class="">
+</p><p id="c077a383-6032-405b-820a-0f287452aca9" class="">
+</p><p id="f3fd9ee2-3e24-4403-8a3d-2af7567ec5f6" class="">
+</p><p id="ce02de60-68b8-49d2-8f5d-c31d60c4cfea" class="">
+</p><div id="9fcd98cc-2f25-425c-8198-a588b958151e" class="collection-content"><h4 class="collection-title">Projects</h4><table class="collection-content"><thead><tr><th><span class="icon property-icon"><svg aria-hidden="true" role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesTitle"><path d="M0.637695 13.1914C1.0957 13.1914 1.32812 13 1.47852 12.5215L2.24414 10.3887H6.14746L6.90625 12.5215C7.05664 13 7.2959 13.1914 7.74707 13.1914C8.22559 13.1914 8.5332 12.9043 8.5332 12.4531C8.5332 12.2891 8.50586 12.1523 8.44434 11.9678L5.41602 3.79199C5.2041 3.21777 4.82129 2.9375 4.19922 2.9375C3.60449 2.9375 3.21484 3.21777 3.0166 3.78516L-0.0322266 12.002C-0.09375 12.1797 -0.121094 12.3232 -0.121094 12.4668C-0.121094 12.918 0.166016 13.1914 0.637695 13.1914ZM2.63379 9.12402L4.17871 4.68066H4.21973L5.76465 9.12402H2.63379ZM12.2793 13.2324C13.3115 13.2324 14.2891 12.6787 14.7129 11.8037H14.7402V12.5762C14.7471 12.9863 15.0273 13.2393 15.4238 13.2393C15.834 13.2393 16.1143 12.9795 16.1143 12.5215V8.00977C16.1143 6.49902 14.9658 5.52148 13.1543 5.52148C11.7666 5.52148 10.6592 6.08887 10.2695 6.99121C10.1943 7.15527 10.1533 7.3125 10.1533 7.46289C10.1533 7.81152 10.4062 8.04395 10.7686 8.04395C11.0215 8.04395 11.2129 7.94824 11.3496 7.73633C11.7529 6.99121 12.2861 6.65625 13.1064 6.65625C14.0977 6.65625 14.6992 7.20996 14.6992 8.1123V8.67285L12.5664 8.7959C10.7686 8.8916 9.77734 9.69824 9.77734 11.0107C9.77734 12.3369 10.8096 13.2324 12.2793 13.2324ZM12.6621 12.1387C11.8008 12.1387 11.2129 11.667 11.2129 10.9561C11.2129 10.2725 11.7598 9.82129 12.7578 9.75977L14.6992 9.62988V10.3203C14.6992 11.3457 13.7969 12.1387 12.6621 12.1387Z"></path></svg></span>Name</th><th><span class="icon property-icon"><svg aria-hidden="true" role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesMultipleSelect"><path d="M1.91602 4.83789C2.44238 4.83789 2.87305 4.40723 2.87305 3.87402C2.87305 3.34766 2.44238 2.91699 1.91602 2.91699C1.38281 2.91699 0.952148 3.34766 0.952148 3.87402C0.952148 4.40723 1.38281 4.83789 1.91602 4.83789ZM5.1084 4.52344H14.3984C14.7607 4.52344 15.0479 4.23633 15.0479 3.87402C15.0479 3.51172 14.7607 3.22461 14.3984 3.22461H5.1084C4.74609 3.22461 4.45898 3.51172 4.45898 3.87402C4.45898 4.23633 4.74609 4.52344 5.1084 4.52344ZM1.91602 9.03516C2.44238 9.03516 2.87305 8.60449 2.87305 8.07129C2.87305 7.54492 2.44238 7.11426 1.91602 7.11426C1.38281 7.11426 0.952148 7.54492 0.952148 8.07129C0.952148 8.60449 1.38281 9.03516 1.91602 9.03516ZM5.1084 8.7207H14.3984C14.7607 8.7207 15.0479 8.43359 15.0479 8.07129C15.0479 7.70898 14.7607 7.42188 14.3984 7.42188H5.1084C4.74609 7.42188 4.45898 7.70898 4.45898 8.07129C4.45898 8.43359 4.74609 8.7207 5.1084 8.7207ZM1.91602 13.2324C2.44238 13.2324 2.87305 12.8018 2.87305 12.2686C2.87305 11.7422 2.44238 11.3115 1.91602 11.3115C1.38281 11.3115 0.952148 11.7422 0.952148 12.2686C0.952148 12.8018 1.38281 13.2324 1.91602 13.2324ZM5.1084 12.918H14.3984C14.7607 12.918 15.0479 12.6309 15.0479 12.2686C15.0479 11.9062 14.7607 11.6191 14.3984 11.6191H5.1084C4.74609 11.6191 4.45898 11.9062 4.45898 12.2686C4.45898 12.6309 4.74609 12.918 5.1084 12.918Z"></path></svg></span>Tags</th></tr></thead><tbody><tr id="efb05b5f-732c-45de-aa31-cdfff0266f9a"><td class="cell-title"><a href="Nathan%20W%20Portfolio%2069afa6535bbf4a2382e5b43ad1402716/Projects%209fcd98cc2f25425c8198a588b958151e/Lead%20Gen%20My%20Brick%20Offer%20efb05b5f732c45deaa31cdfff0266f9a.html"><img class="icon" src="https://www.notion.so/icons/signature-document_gray.svg"/>Lead Gen | My Brick Offer</a></td><td class="cell-mZT;"><span class="selected-value select-value-color-green">Mobile</span><span class="selected-value select-value-color-pink">UI/UX</span></td></tr><tr id="0a8252d1-b2b2-46e7-8e2e-be88c33b18c3"><td class="cell-title"><a href="Nathan%20W%20Portfolio%2069afa6535bbf4a2382e5b43ad1402716/Projects%209fcd98cc2f25425c8198a588b958151e/Property%20Managment%20&amp;%20CRM%20Brick%20Kiln%200a8252d1b2b246e78e2ebe88c33b18c3.html"><img class="icon" src="https://www.notion.so/icons/home_gray.svg"/>Property Managment &amp; CRM | Brick Kiln</a></td><td class="cell-mZT;"><span class="selected-value select-value-color-pink">UI/UX</span><span class="selected-value select-value-color-blue">Web</span></td></tr><tr id="34515155-d00b-4c4f-a435-f9905e7d1774"><td class="cell-title"><a href="Nathan%20W%20Portfolio%2069afa6535bbf4a2382e5b43ad1402716/Projects%209fcd98cc2f25425c8198a588b958151e/Logos%20&amp;%20Branding%20Brick%2034515155d00b4c4fa435f9905e7d1774.html"><img class="icon" src="https://www.notion.so/icons/color-palette_gray.svg"/>Logos &amp; Branding | Brick.</a></td><td class="cell-mZT;"><span class="selected-value select-value-color-default">Brand</span><span class="selected-value select-value-color-yellow">Logo</span></td></tr><tr id="2bdd0f3f-e399-44d7-8b70-e92b84ec8dd3"><td class="cell-title"><a href="Nathan%20W%20Portfolio%2069afa6535bbf4a2382e5b43ad1402716/Projects%209fcd98cc2f25425c8198a588b958151e/Event%20Management%20My%20School%20Dance%202bdd0f3fe39944d78b70e92b84ec8dd3.html"><img class="icon" src="https://www.notion.so/icons/dance_gray.svg"/>Event Management | My School Dance</a></td><td class="cell-mZT;"><span class="selected-value select-value-color-pink">UI/UX</span></td></tr><tr id="c0ae2f16-6dea-4282-8f08-2f4142dadf67"><td class="cell-title"><a href="Nathan%20W%20Portfolio%2069afa6535bbf4a2382e5b43ad1402716/Projects%209fcd98cc2f25425c8198a588b958151e/Real%20Estate%20Transactions%20Brick%20(WIP)%20c0ae2f166dea42828f082f4142dadf67.html"><img class="icon" src="https://www.notion.so/icons/wall_gray.svg"/>Real Estate Transactions | Brick. (WIP)</a></td><td class="cell-mZT;"><span class="selected-value select-value-color-pink">UI/UX</span><span class="selected-value select-value-color-blue">Web</span></td></tr><tr id="ca978358-ab23-4b8a-98c4-7e4ae68abc29"><td class="cell-title"><a href="Nathan%20W%20Portfolio%2069afa6535bbf4a2382e5b43ad1402716/Projects%209fcd98cc2f25425c8198a588b958151e/Lego%20Filmarray%20Biofire%20Defense%20ca978358ab234b8a98c47e4ae68abc29.html"><img class="icon" src="https://www.notion.so/icons/microscope_gray.svg"/>Lego Filmarray | Biofire Defense</a></td><td class="cell-mZT;"><span class="selected-value select-value-color-red">Graphics</span><span class="selected-value select-value-color-orange">Marketing</span></td></tr><tr id="9c727375-65b2-4ea8-b612-0798f974d3a4"><td class="cell-title"><a href="Nathan%20W%20Portfolio%2069afa6535bbf4a2382e5b43ad1402716/Projects%209fcd98cc2f25425c8198a588b958151e/Legacy%20Hardware%20&amp;%20Software%20Razer%20Mk%20II%209c72737565b24ea8b6120798f974d3a4.html"><img class="icon" src="https://www.notion.so/icons/chemistry_gray.svg"/>Legacy Hardware &amp; Software | Razer Mk II</a></td><td class="cell-mZT;"><span class="selected-value select-value-color-pink">UI/UX</span></td></tr><tr id="c26242fe-ae00-48ac-9b62-2c5d3547c219"><td class="cell-title"><a href="Nathan%20W%20Portfolio%2069afa6535bbf4a2382e5b43ad1402716/Projects%209fcd98cc2f25425c8198a588b958151e/Syndromic%20Trends%20Biofire%20Defense%20c26242feae0048ac9b622c5d3547c219.html"><img class="icon" src="https://www.notion.so/icons/chart-mixed_gray.svg"/>Syndromic Trends | Biofire Defense</a></td><td class="cell-mZT;"><span class="selected-value select-value-color-pink">UI/UX</span><span class="selected-value select-value-color-blue">Web</span></td></tr><tr id="df2122b9-067c-4632-8492-7592f4a2ad01"><td class="cell-title"><a href="Nathan%20W%20Portfolio%2069afa6535bbf4a2382e5b43ad1402716/Projects%209fcd98cc2f25425c8198a588b958151e/Shirts%20Biofire%20Defense%20df2122b9067c463284927592f4a2ad01.html"><img class="icon" src="https://www.notion.so/icons/tshirt_gray.svg"/>Shirts | Biofire Defense</a></td><td class="cell-mZT;"><span class="selected-value select-value-color-red">Graphics</span><span class="selected-value select-value-color-orange">Marketing</span></td></tr><tr id="9f11cabb-5557-4e4f-80d4-3740ef86db0d"><td class="cell-title"><a href="Nathan%20W%20Portfolio%2069afa6535bbf4a2382e5b43ad1402716/Projects%209fcd98cc2f25425c8198a588b958151e/Graphic%20Signage%20Biofire%20Defense%209f11cabb55574e4f80d43740ef86db0d.html"><img class="icon" src="https://www.notion.so/icons/paint-roller_gray.svg"/>Graphic Signage | Biofire Defense</a></td><td class="cell-mZT;"><span class="selected-value select-value-color-red">Graphics</span></td></tr><tr id="d9de035f-1c2e-475b-b0c5-0a97bc8ddb22"><td class="cell-title"><a href="Nathan%20W%20Portfolio%2069afa6535bbf4a2382e5b43ad1402716/Projects%209fcd98cc2f25425c8198a588b958151e/Marketing%20Gifts%20Biofire%20Defense%20d9de035f1c2e475bb0c50a97bc8ddb22.html"><img class="icon" src="https://www.notion.so/icons/gift_gray.svg"/>Marketing Gifts | Biofire Defense</a></td><td class="cell-mZT;"><span class="selected-value select-value-color-orange">Marketing</span></td></tr></tbody></table><br/><br/></div><p id="27de96d4-275e-4fc4-a3f5-311a0774c233" class="">
+</p><p id="66441f00-d884-4ffa-afe1-5a663400eaf4" class="">
+</p><p id="e1d8b00c-85f4-4bdf-9403-85aeb978026b" class="">
+</p><p id="617e212f-2d59-4fe1-8a39-4946ddc82c62" class="">
+</p><p id="bcd256a7-51de-4463-91da-fa87d24fb356" class="">
+</p><p id="82858b36-13e8-40f6-a1c5-4ac34b5fc305" class="">
+</p><p id="51e25a18-56f0-4268-8e51-758e7302741d" class="">
+</p><p id="87f0d5ad-7cfb-4d64-9c39-3ae8c7f22ba5" class="">
+</p><p id="80deb246-ee42-4ef8-927b-61fd34780c1a" class="">
+</p><p id="208f5010-0198-41bf-a086-ea819f3ffe8e" class="">
+</p><hr id="f5103457-e641-4f3b-afb5-0fcfcc86abe4"/><h3 id="e9f171f5-d81a-4177-966c-901160f63297" class="">©️ 2024 Nathan Woodbury</h3><hr id="d26d3566-4cbb-4f5f-9ddb-f814b020d45c"/><p id="f69ba1d0-539d-4da7-b8bc-3359dbbf55d0" class="">
+</p><p id="46110b9a-bd55-4ecb-92b6-cf56e67885bd" class="">
+</p><p id="a5a1bdbc-d63f-43ef-ab1f-b6a39a1c9577" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
