@@ -1,0 +1,696 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Property Managment &amp; CRM | Brick Kiln</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: undefined; }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-transparentGray { background-color: undefined; }
+.select-value-color-translucentGray { background-color: undefined; }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="0a8252d1-b2b2-46e7-8e2e-be88c33b18c3" class="page sans"><header><div class="page-header-icon undefined"><img class="icon" src="https://www.notion.so/icons/home_gray.svg"/></div><h1 class="page-title">Property Managment &amp; CRM | Brick Kiln</h1><p class="page-description"></p><table class="properties"><tbody></tbody></table></header><div class="page-body"><h3 id="5ffd544b-c9c8-46f0-bca6-ac13cc23a215" class="">Company</h3><p id="12207a4d-3a48-4c43-8fe9-81e76d9efc91" class="">Brick is a real estate and property management startup based out of Utah. I joined the company in its early stages and worked with the founders  to build a brand, design software and experiences and craft strategy for the product and it&#x27;s development. this included several pivots as we worked to find our place in the crowded prop-tech market.</p><div id="ab01e875-9ca4-4c0c-8439-4d04bdda5610" class="column-list"><div id="34ea9cf0-1f46-4e02-bd67-c5ae16668cef" style="width:56.25%" class="column"><h3 id="700a0023-b846-4720-b1f9-5cccc332861c" class="">Deliverables:</h3><ul id="095220a4-a55f-4c62-ada3-7eb3700c0242" class="bulleted-list"><li style="list-style-type:disc"><strong>Interaction Design</strong><ul id="00ebc9e2-4a1d-4b0a-9e67-303b13971b2f" class="bulleted-list"><li style="list-style-type:circle">High Fidelity Interactive Prototypes for Key tasks</li></ul></li></ul><ul id="5f5b5141-8188-48cb-b0ff-484ad10fe283" class="bulleted-list"><li style="list-style-type:disc"><strong>UI/UX Design</strong><ul id="f84f3515-37e5-4910-8833-fb82b7f2da48" class="bulleted-list"><li style="list-style-type:circle">Competitive Analysis</li></ul><ul id="34d31de5-206c-4730-8919-8ca8539c6a9f" class="bulleted-list"><li style="list-style-type:circle">Personas</li></ul><ul id="f4765851-0de2-4996-b430-f2d4b72a3e40" class="bulleted-list"><li style="list-style-type:circle">User Journeys &amp; Task flow</li></ul><ul id="20610316-0fa9-4eaa-93f8-5b62bdcd66b0" class="bulleted-list"><li style="list-style-type:circle">Site Map</li></ul><ul id="d94ae784-7897-4d4a-8106-33f7b8f95a1e" class="bulleted-list"><li style="list-style-type:circle">Low Fidelity Wireframes</li></ul><ul id="a45d883e-2a70-4182-9e54-e670da227ca9" class="bulleted-list"><li style="list-style-type:circle">High Fidelity Mockups and Prototypes</li></ul><ul id="34ed0419-1137-4dea-9b5f-42c8b1502133" class="bulleted-list"><li style="list-style-type:circle">Design System and UI Kit</li></ul><ul id="b861f7b9-faea-4100-8132-9ea304d253e1" class="bulleted-list"><li style="list-style-type:circle">Usability Testing</li></ul><p id="bd55d496-913e-4442-9d0c-8272f13e3ca3" class="">
+</p></li></ul></div><div id="7d87ec11-b779-48fc-9aed-e91258ad4164" style="width:43.75%" class="column"><h3 id="e50fbe66-b72f-4fe5-9976-53eaa0884760" class="">My Roles:</h3><ul id="5e8e4db5-74ed-4ec2-83fd-7b4baa9738d6" class="bulleted-list"><li style="list-style-type:disc">User Experience (UX) Designer</li></ul><ul id="bfd7540f-1841-4aa9-8deb-2f6442bb04f4" class="bulleted-list"><li style="list-style-type:disc">User Interface (UI) Designer</li></ul><ul id="a0adca18-9740-4700-8514-acdaf8b2ef63" class="bulleted-list"><li style="list-style-type:disc">Interaction (IxD) Designer</li></ul><ul id="6cb184cf-a11d-4630-a2d0-3763fa811ec2" class="bulleted-list"><li style="list-style-type:disc">Visual Designer</li></ul><hr id="259fe461-7c2d-4ed3-9bcb-dfa6b00731f3"/><h3 id="67eb302a-98d3-4358-b2b8-c99d48b82285" class="">Specifications:</h3><p id="b1327389-9f34-4757-ae97-5910581e460b" class=""><strong>Duration: </strong>6 Week MVP, Ongoing Development</p><p id="6a77df4f-f68a-43f1-8514-96436d359c3e" class=""><strong>Tools:</strong> Figma, Adobe Illustrator,  Adobe Photoshop</p><p id="0199f8f3-bdfa-4361-bbd9-5ebe3076f2d7" class="">
+</p></div></div><hr id="98d9de14-b42a-4bd0-a3cf-4a60df288da1"/><figure id="611ef940-7b1b-45ae-a4da-f3e522c65b80" class="image"><a href="Property%20Managment%20&amp;%20CRM%20Brick%20Kiln%200a8252d1b2b246e78e2ebe88c33b18c3/AdobeStock_123091886.jpeg"><img style="width:100%" src="Property%20Managment%20&amp;%20CRM%20Brick%20Kiln%200a8252d1b2b246e78e2ebe88c33b18c3/AdobeStock_123091886.jpeg"/></a></figure><h2 id="9383397c-c418-450a-a018-0848a3eb4d5d" class="">Overview</h2><hr id="845e57c5-3c95-43d7-953f-03aa9642328f"/><p id="16f8a1ba-8edb-4927-a622-be8afb415105" class=""><a href="Real%20Estate%20Transactions%20Brick%20(WIP)%20c0ae2f166dea42828f082f4142dadf67.html">Originally</a> built as a Project Management solution to facilitate the documentation of real estate transactions the software needed to be reworked to allow our team to move on from Salesforce. This required additional CRM features to support project management tools, chat features and activity logs.</p><h2 id="8857f8fe-cfab-494a-a348-08292bc6cce4" class="">Design Process</h2><hr id="68fc3c76-e61b-4c88-9d00-79545898960a"/><div id="b78c1acc-0a05-4547-8e5d-a38e70672e4f" class="column-list"><div id="52413818-98e4-4980-983d-b10b3495edbb" style="width:25%" class="column"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="7c29cc5b-b217-4f7f-9f3b-f2244057f2a1"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/book-closed_gray.svg"/></div><div style="width:100%">Research</div></figure></div><div id="a088e9be-c5e3-4db8-8f60-78ebb495daa0" style="width:25%" class="column"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="9faa089b-c5a6-4221-8145-02af2a425efe"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/map_gray.svg"/></div><div style="width:100%">Strategy</div></figure></div><div id="cb944420-bc5b-41cb-ad7b-cc207fb84335" style="width:25%" class="column"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="5b739f5b-1cf4-42fc-8e0a-e58d2e6300cb"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/color-palette_gray.svg"/></div><div style="width:100%">Design </div></figure></div><div id="336ebd91-7d18-41bc-bd5d-d2263b699895" style="width:25%" class="column"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="18096e72-c20b-49dc-8d27-5642a02ad1af"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/chemistry_gray.svg"/></div><div style="width:100%">Test</div></figure></div></div><h2 id="29ac05ae-8f11-4220-b26b-b97d59aa12e7" class="">Research &amp; Define Problems</h2><hr id="67408a57-894e-47b8-ad1e-bfb52409d151"/><p id="734aad53-d8cf-486c-ade2-35095c925cd4" class="">I spent time working with stakeholders to outline what features would be most helpful in the short term for agents.  We would need to replicate some of the more basic features of Salesforce while building them in a way that overcame the shortcomings experienced there.  Using this as a basis I blocked out a diagram of features to try and get a rough scope of the work involved.  </p><figure id="015ab4c2-2bcd-4710-abc1-451e92f861b6" class="image"><a href="Property%20Managment%20&amp;%20CRM%20Brick%20Kiln%200a8252d1b2b246e78e2ebe88c33b18c3/CRM.Kiln-global.png"><img style="width:768px" src="Property%20Managment%20&amp;%20CRM%20Brick%20Kiln%200a8252d1b2b246e78e2ebe88c33b18c3/CRM.Kiln-global.png"/></a></figure><p id="5b69c077-9d8e-4370-b5b4-868379c33a72" class="">
+</p><h3 id="2e62e9c7-2bd4-40c7-9c42-c490f613cebc" class="">Findings</h3><ul id="a628209a-8ed1-4f2f-8617-8e97b846abf8" class="bulleted-list"><li style="list-style-type:disc">Most important features to design and develop are:<ul id="1514a791-28ab-4ced-ab61-7e6888b999b1" class="bulleted-list"><li style="list-style-type:circle">communications chat platform</li></ul><ul id="166f41bc-fbce-41d0-b89e-cb1a241e5942" class="bulleted-list"><li style="list-style-type:circle">activity log for auditing and compliance</li></ul><ul id="f2eeffbf-38e6-4388-b645-9f1dd87d48ee" class="bulleted-list"><li style="list-style-type:circle">task tracker for visibility</li></ul><ul id="7ea12cc9-f460-4d41-9f38-25b38f06fe95" class="bulleted-list"><li style="list-style-type:circle">Global Pipeline of projects/properties</li></ul><ul id="0085941e-8388-4c1b-b7d7-3b06c71b0ae3" class="bulleted-list"><li style="list-style-type:circle">KPI tracking of agents and their productivity.</li></ul></li></ul><p id="3689ce13-2901-41df-beee-1665bc95f944" class="">with the goal of not having to renew a salesforce contract these were our key objectives and formed the start of what we needed to research and design. I also discovered a previously not communicated expectation for notifications via pop up that would inform users of new tasks, changes to projects and new messages.</p><h3 id="a5389bbe-9084-4134-be1c-e56593a18cab" class="">Problems </h3><ul id="2f75b4b1-575e-4a1c-b94b-c2b1b93083c0" class="bulleted-list"><li style="list-style-type:disc">Notifications on a user level require a lot of support on the development side specifically a notification management system to control frequency, variety etc.</li></ul><ul id="861d000d-4705-411c-a572-5d03a23cc465" class="bulleted-list"><li style="list-style-type:disc">What is the best way to build the hierarchy of information? Around projects or around users. Do we attach tasks to users or the projects their assigned to? How does that apply to assigned tasks?<figure id="e5baa4a9-db2a-425c-ad9e-1150d2b90a24" class="image"><a href="Property%20Managment%20&amp;%20CRM%20Brick%20Kiln%200a8252d1b2b246e78e2ebe88c33b18c3/CRM.Kilnusers.png"><img style="width:4234px" src="Property%20Managment%20&amp;%20CRM%20Brick%20Kiln%200a8252d1b2b246e78e2ebe88c33b18c3/CRM.Kilnusers.png"/></a></figure></li></ul><ul id="9d4b88c0-bda8-4086-bb97-9ac8810bb697" class="bulleted-list"><li style="list-style-type:disc">How do we manage the 15+ swim-lanes on the global pipeline? </li></ul><ul id="183fd886-ccdb-467f-be48-3195bee5696d" class="bulleted-list"><li style="list-style-type:disc">How do the new features interact with legacy features and incoming data visualization? </li></ul><h2 id="4724a3c4-9fad-4031-bb1d-f80f4fc9d65d" class="">Strategy &amp; Analysis</h2><hr id="08d8ac41-b5fb-4fc0-a10b-172dd59604f3"/><p id="ee8b6be2-9ac2-4b06-bb48-b4b35ad7c19c" class="">Working with the development team and stakeholders I built out a diagram to inform how various systems were interacting with each other.  One of the benefits of this kind of diagram is that it gives a rough estimate of work to be completed and led to a harder look at how much work critical systems would be to build. </p><figure id="2f97f5a2-8033-4713-9456-c74e620ba012" class="image"><a href="Property%20Managment%20&amp;%20CRM%20Brick%20Kiln%200a8252d1b2b246e78e2ebe88c33b18c3/CRM.Kiln1.png"><img style="width:1008px" src="Property%20Managment%20&amp;%20CRM%20Brick%20Kiln%200a8252d1b2b246e78e2ebe88c33b18c3/CRM.Kiln1.png"/></a></figure><h3 id="49ebd54c-07d0-45c8-8299-0da0694498a7" class="">KPI Feature</h3><p id="3f130980-e72f-4c00-bed4-796664f470c6" class="">One of the features that was discussed at length and then deprioritized to later projects was the integration of KPIs into personal dashboards. With the wealth of data we could be pulling in through the house purchasing process we would be able to track tasks and numbers at every step of the transaction and look for ways to optimize efficiency.  Ultimately it was decided that the chat-feed and pipeline were large enough chunks to tackle in the near future and KPI integration was pushed to a later date. </p><figure id="dddea8ab-bba2-4e0f-8029-33b38ad5ad50" class="image"><a href="Property%20Managment%20&amp;%20CRM%20Brick%20Kiln%200a8252d1b2b246e78e2ebe88c33b18c3/CRM.Kilnkpis.png"><img style="width:384px" src="Property%20Managment%20&amp;%20CRM%20Brick%20Kiln%200a8252d1b2b246e78e2ebe88c33b18c3/CRM.Kilnkpis.png"/></a></figure><h3 id="2a978faa-2e99-4ba3-a460-9690051eb4d6" class="">Decisions</h3><ul id="841c3722-fc6f-40be-89bc-e44b495ca2fb" class="bulleted-list"><li style="list-style-type:disc">Don’t worry about KPIs feature until a later date. </li></ul><ul id="9b242526-c8d5-4481-a0cc-652e862c0203" class="bulleted-list"><li style="list-style-type:disc">Limit pipeline views to the relevant user via permissions.<ul id="efc6dfe9-5199-4881-852c-0eddc25da23b" class="bulleted-list"><li style="list-style-type:circle">Sales - Limited to first 4-8 swimlanes</li></ul><ul id="4e4af4c5-fc51-4841-b22e-0b9020f6c6cc" class="bulleted-list"><li style="list-style-type:circle">Underwriting - Global view</li></ul><ul id="a0c67b93-2a18-4eab-b7a5-32245b011ba7" class="bulleted-list"><li style="list-style-type:circle">Renovations Project Manager - Middle 6-8 swimlanes</li></ul><ul id="1e1387d2-1e42-450e-9b83-b89c3cf9eaab" class="bulleted-list"><li style="list-style-type:circle">etc.</li></ul></li></ul><ul id="379ffbd3-cfee-47f2-bba6-d0a434d42ca4" class="bulleted-list"><li style="list-style-type:disc">Combine the chat and communications with activity log on the overview page. Create separate section just for project activity for auditing and compliance.</li></ul><h3 id="d2983ee4-331c-4f92-83a4-f9bb435c40e7" class="">Napkin Drawings</h3><p id="aeb8de4b-895f-4042-907a-7f54d6bd87e5" class="">One of the stakeholders provided quick and dirty powerpoint napkin drawings to show exactly what information they wanted to provide to agents using the software. This was helpful in place of a list of data and gave me an idea of what was expected from the project.</p><div id="8fc67a1e-9698-46d4-9991-7f394c2cbc30" class="column-list"><div id="2cc6ee34-b0d2-44c1-9ebc-12258e61b43a" style="width:33.333333333333336%" class="column"><figure id="6f24a89b-8ab3-4bfc-92d5-1463f20946ef" class="image"><a href="Property%20Managment%20&amp;%20CRM%20Brick%20Kiln%200a8252d1b2b246e78e2ebe88c33b18c3/Dispositions.png"><img style="width:1921px" src="Property%20Managment%20&amp;%20CRM%20Brick%20Kiln%200a8252d1b2b246e78e2ebe88c33b18c3/Dispositions.png"/></a></figure></div><div id="2c8e8209-8702-436a-8acf-032159d205df" style="width:33.333333333333336%" class="column"><figure id="c430cb85-e529-4e97-a030-812b4129eedc" class="image"><a href="Property%20Managment%20&amp;%20CRM%20Brick%20Kiln%200a8252d1b2b246e78e2ebe88c33b18c3/Project_Manager.png"><img style="width:1921px" src="Property%20Managment%20&amp;%20CRM%20Brick%20Kiln%200a8252d1b2b246e78e2ebe88c33b18c3/Project_Manager.png"/></a></figure></div><div id="4b860a0d-d44f-45cc-9f99-50a01e0e6c3b" style="width:33.33333333333333%" class="column"><figure id="0013e9b2-4d9e-41da-85af-e07aecd5e884" class="image"><a href="Property%20Managment%20&amp;%20CRM%20Brick%20Kiln%200a8252d1b2b246e78e2ebe88c33b18c3/Underwriting.png"><img style="width:1921px" src="Property%20Managment%20&amp;%20CRM%20Brick%20Kiln%200a8252d1b2b246e78e2ebe88c33b18c3/Underwriting.png"/></a></figure></div></div><h3 id="243dd132-fc61-4121-8902-918825e1bd3d" class="">The Chat Feed Wireframe</h3><p id="974026de-8c82-4535-9426-2e3d70861fa8" class="">The chatter or chat feed portion of the project was the feature that experienced the most revisions as we had to take into account building an activity log into each project, something that we could use to audit or transactions and interactions with customers but also retain legal records for financial and tax reasons. </p><figure id="6b999d97-a3ac-40b9-9eb1-1fbf97952641" class="image"><a href="Property%20Managment%20&amp;%20CRM%20Brick%20Kiln%200a8252d1b2b246e78e2ebe88c33b18c3/image_16.png"><img style="width:1383px" src="Property%20Managment%20&amp;%20CRM%20Brick%20Kiln%200a8252d1b2b246e78e2ebe88c33b18c3/image_16.png"/></a></figure><h2 id="df5fa340-998e-4797-9045-7519619543fd" class="">Design &amp; Prototype Solutions</h2><hr id="7e65cf41-bd54-45e3-81da-e312f3fc28e9"/><div id="7ee3a17f-c446-4e81-a15b-42b134aa7a38" class="column-list"><div id="78776e22-f0ae-4f74-8e0c-7216c38a242b" style="width:50%" class="column"><h3 id="df75cabd-7a18-4e7e-a206-7da7047b3601" class=""><strong>The Chat Feed</strong></h3><p id="507e75d2-21a1-42d8-8536-094d42589a2d" class="">Based around the Github model for showcasing comments, this set of tiles and cards were used to present the capabilities of the chat feed to track activity across a property transaction as well as communications relating to that project. </p><p id="ace7ae1e-8b91-4747-a998-cf8aaf363305" class="">Originally structured as more of a chat app like telegram, slack, or discord we moved to a more traditional forum based approach to facilitate the new system and user actions that needed to be logged. </p><p id="3a2352ac-6a1e-45f1-8f5d-7a643884222d" class="">
+</p><figure id="6e1f3536-e4fb-4c0d-a154-b86fee74994d" class="image"><a href="Property%20Managment%20&amp;%20CRM%20Brick%20Kiln%200a8252d1b2b246e78e2ebe88c33b18c3/kiln-dashboard-personal.png"><img style="width:1152px" src="Property%20Managment%20&amp;%20CRM%20Brick%20Kiln%200a8252d1b2b246e78e2ebe88c33b18c3/kiln-dashboard-personal.png"/></a><figcaption>User Tasks and Chat Feed</figcaption></figure><p id="d86112d5-8f62-4d92-b9e3-753f8d1e67d1" class="">
+</p><p id="7d3ed88e-6a9c-4d71-9136-62485bf8e33f" class="">
+</p></div><div id="0c8b8b51-6f05-4192-8c76-e98442167e38" style="width:50%" class="column"><p id="dc727380-44d9-4256-91ec-0b1e6813077c" class="">
+</p><figure id="a3fee2c6-ba6e-489d-80de-077385ae2d1c" class="image"><a href="Property%20Managment%20&amp;%20CRM%20Brick%20Kiln%200a8252d1b2b246e78e2ebe88c33b18c3/Chat_Feed_Examples.png"><img style="width:989px" src="Property%20Managment%20&amp;%20CRM%20Brick%20Kiln%200a8252d1b2b246e78e2ebe88c33b18c3/Chat_Feed_Examples.png"/></a></figure></div></div><div id="35019897-3f6b-426d-9504-e5fe9e51bc63" class="column-list"><div id="855a3581-5688-4c51-af66-431844f84249" style="width:50.000000000000014%" class="column"><h3 id="fb02e0b6-c51a-4ed5-b5f3-108d77f85e7e" class=""><strong>User Dashboards</strong></h3><p id="d18cd2c8-2547-4014-b3eb-45876e91c654" class="">While KPIS were put on hold we ned we wanted to make space so that when we came back we had room on user dashboards to express the numbers and interactions that would be valuable. placeholder data was put in to bring some limited value even if it wasn&#x27;t as dynamic or personal as a final KPI feature would be. </p><p id="7dcd8aac-6612-4679-8a6f-8402de011326" class="">
+</p><p id="00d2585d-bd13-4649-9c2c-3d112487aab9" class="">
+</p></div><div id="cfffb854-cbec-436d-8be2-bdfc6406bae7" style="width:50%" class="column"><figure id="f66492b2-92c9-4cba-b82c-4bbb2859c7b1" class="image"><a href="Property%20Managment%20&amp;%20CRM%20Brick%20Kiln%200a8252d1b2b246e78e2ebe88c33b18c3/kiln-dashboard-CONPROJ.png"><img style="width:1440px" src="Property%20Managment%20&amp;%20CRM%20Brick%20Kiln%200a8252d1b2b246e78e2ebe88c33b18c3/kiln-dashboard-CONPROJ.png"/></a><figcaption>User Dashboards</figcaption></figure></div></div><div id="cd17108e-a53c-49de-b042-7798720df10d" class="column-list"><div id="429e9f15-4eb6-43ed-a87e-5feefce4bfee" style="width:50%" class="column"><figure id="45de2348-3a76-43cf-9e40-341154f19e72" class="image"><a href="Property%20Managment%20&amp;%20CRM%20Brick%20Kiln%200a8252d1b2b246e78e2ebe88c33b18c3/kiln-project-activity.png"><img style="width:1440px" src="Property%20Managment%20&amp;%20CRM%20Brick%20Kiln%200a8252d1b2b246e78e2ebe88c33b18c3/kiln-project-activity.png"/></a><figcaption>Project Based Task Management and Chat Feed</figcaption></figure></div><div id="74ef8114-0159-4a5a-b540-3c7786c9f850" style="width:50.000000000000014%" class="column"><h3 id="faa7ef7b-f416-40e7-972c-89f73729c3ed" class=""><strong>Project Based Task List</strong></h3><p id="60ac491e-27c6-453e-8463-89464044bf32" class="">We decided to move forward with an information hierarchy surrounding the transaction project as the basis. This allowed us to attach tasks, chats, and activities to a single project rather than a single user. Permissions were also a consideration.</p><p id="adfbeed2-2bfb-4489-b291-3630bad2f6e3" class="">
+</p></div></div><div id="15b733da-9ccc-4d92-8a5e-8234cba0db50" class="column-list"><div id="78e8303c-0f51-4b82-808f-53534666acfe" style="width:50.000000000000014%" class="column"><h3 id="0c3217cf-74fe-4c78-a9a2-6227913bac17" class=""><strong>Project Pipeline</strong></h3><p id="c24d20e9-b255-46f0-adcb-3c9d6ed40046" class="">The pipeline was an undertaking because we needed to support the stakeholders request use permissions based views of the entire workflow. so while there were over 15 swim lanes in the process each agent would only see the 5-8 that their role was required to touch.  The exception was the property underwriting team that would need the global view.   </p></div><div id="ccbac5a7-e09f-45c5-a2b0-cb654684169e" style="width:50%" class="column"><figure id="1e8e7445-712f-416d-bc74-8e6a74816eee" class="image"><a href="Property%20Managment%20&amp;%20CRM%20Brick%20Kiln%200a8252d1b2b246e78e2ebe88c33b18c3/kiln-wholesale-pipeline.png"><img style="width:1440px" src="Property%20Managment%20&amp;%20CRM%20Brick%20Kiln%200a8252d1b2b246e78e2ebe88c33b18c3/kiln-wholesale-pipeline.png"/></a><figcaption>Pipeline View</figcaption></figure></div></div><figure id="952b4ba2-c577-4754-b4db-57c2c72b08a4" class="image"><a href="Property%20Managment%20&amp;%20CRM%20Brick%20Kiln%200a8252d1b2b246e78e2ebe88c33b18c3/Group_249.png"><img style="width:2208px" src="Property%20Managment%20&amp;%20CRM%20Brick%20Kiln%200a8252d1b2b246e78e2ebe88c33b18c3/Group_249.png"/></a></figure><p id="a70b99a1-9303-457f-9563-d8fffdaeb14a" class="">
+</p><h2 id="80dc78af-5b49-4fa3-a330-a50f535fc873" class="">Test &amp; Iterate</h2><hr id="8ccf7431-1abd-4f56-b42c-623adbf919b4"/><p id="90a39083-9381-468f-bf4d-d7136db35df2" class="">I provided prototype designs to stakeholders and agents to review and the key take-aways were:</p><ul id="7ad803e2-583a-4034-be8d-be55ad5b371b" class="bulleted-list"><li style="list-style-type:disc">They loved the draggable cards for swim-lanes and the changing views depending on where you looked and who was logged into the system. </li></ul><ul id="9d6af0b9-a3bf-4537-84e2-501c0d4828ad" class="bulleted-list"><li style="list-style-type:disc">They requested some minor changes to the information displayed on the swim-lane cards to better serve the transaction process. </li></ul><ul id="e881e6a0-3d5c-4e23-88dd-50f101aace7e" class="bulleted-list"><li style="list-style-type:disc">There was a high demand for the notification feature something that we would need to prioritiz sooner rather than later. </li></ul><ul id="917760be-ec89-4bc4-86ea-6466d9838bd6" class="bulleted-list"><li style="list-style-type:disc">We were notified we needed to add more system events to the task list for editing, deleting and re-assigning tasks instead of only completion and creation.</li></ul><h2 id="818d79a3-f64d-4fac-8644-5b955afe38e6" class="">Lessons Learned/Final Thoughts</h2><hr id="05593c36-5fdf-474e-98cc-60e796310dd8"/><p id="25070808-439f-49cb-af43-30e48c4f5dc7" class="">This was a fantastic project and I’m so grateful I got to work on it. It was a marathon of interconnected systems that each needed small udpates. One of my key learning points was how important it is to scope out the work and ensure your working on the best thing. This was a complex project with a lot of moving parts and even working as hard as we were we still missed out on some of the critical system events that were needed in the log.</p><p id="209919ef-2f96-4c39-ae4c-c3ed3eb44c05" class=""> Im glad the research we put in and breakdowns we built were informative and allowed us to delay the KPI feature until later as it definitely would have had an impact on the quality of work that I was able to put out. Though it is a fun design feature that would be interesting to tackle someday. </p><p id="a1244503-342c-41df-bfe8-e0f47d9df77b" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

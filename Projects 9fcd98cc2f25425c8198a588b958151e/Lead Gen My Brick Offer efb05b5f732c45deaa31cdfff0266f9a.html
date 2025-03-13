@@ -1,0 +1,690 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Lead Gen | My Brick Offer</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: undefined; }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-transparentGray { background-color: undefined; }
+.select-value-color-translucentGray { background-color: undefined; }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="efb05b5f-732c-45de-aa31-cdfff0266f9a" class="page sans"><header><div class="page-header-icon undefined"><img class="icon" src="https://www.notion.so/icons/signature-document_gray.svg"/></div><h1 class="page-title">Lead Gen | My Brick Offer</h1><p class="page-description"></p><table class="properties"><tbody></tbody></table></header><div class="page-body"><h2 id="844b25b6-7882-4a40-ab9f-c7e4149105a9" class="">Company</h2><p id="63823803-ed56-4222-9e39-336ab15e1d97" class="">Brick is a real estate and property management startup based out of Utah. I joined the company in its early stages and worked with the founders  to build a brand, design software and experiences and craft strategy for the product and it&#x27;s development. this included several pivots as we worked to find our place in the crowded prop-tech market.</p><div id="2880289d-70f7-4a2a-a08f-2fa7943ad2fd" class="column-list"><div id="49c5e35c-c448-48ae-b1f2-3c8d21d7adca" style="width:56.25%" class="column"><h2 id="6c1fb694-8ca6-427d-ae0b-cf3ef53b2f4b" class="">Deliverables:</h2><hr id="77a97da4-2a9f-45cb-822e-56547e1e9389"/><ul id="cf23cbd9-cfef-423a-baa6-439f2865d04c" class="bulleted-list"><li style="list-style-type:disc"><strong>Interaction Design</strong><ul id="8f12cabe-56df-45a8-a89c-d267768f3a2c" class="bulleted-list"><li style="list-style-type:circle">High Fidelity Interactive Prototypes for Key tasks</li></ul></li></ul><ul id="8cd9e05c-67c7-4ea5-96f8-ad34e61926d6" class="bulleted-list"><li style="list-style-type:disc"><strong>UI/UX Design</strong><ul id="18e6b6d4-f9da-4a10-948b-2c0a503e8a64" class="bulleted-list"><li style="list-style-type:circle">Personas</li></ul><ul id="df237c2e-aaf1-4ef3-857f-cce811c2b850" class="bulleted-list"><li style="list-style-type:circle">User Journeys and Task flow</li></ul><ul id="798d5a3d-f96c-4b94-981a-62909a0f41a1" class="bulleted-list"><li style="list-style-type:circle">Site Map</li></ul><ul id="e135bd56-507e-4b7c-855d-ba05355eef77" class="bulleted-list"><li style="list-style-type:circle">High Fidelity Mockups and Prototypes</li></ul><ul id="aea22916-4f9c-4320-bd8d-b94170883aa3" class="bulleted-list"><li style="list-style-type:circle">Usability Testing</li></ul><p id="0142aa11-c847-4087-8489-1e32ea77c3bb" class="">
+</p></li></ul></div><div id="4ed232f2-73bb-47f0-9a46-c2a6a4ce73c1" style="width:43.75%" class="column"><h2 id="5309d598-573a-4cbd-a83c-54ecc67e187e" class="">My Roles:</h2><hr id="0e01f788-c6d5-43f3-9ca7-44fa32abc02e"/><ul id="1ea93caf-a869-492a-a990-06a5ebf29be5" class="bulleted-list"><li style="list-style-type:disc">User Experience (UX) Designer</li></ul><ul id="1f726568-7407-4606-b271-2496eebedd45" class="bulleted-list"><li style="list-style-type:disc">User Interface (UI) Designer</li></ul><ul id="16b29616-e44a-4eeb-aea4-cf9952a9e0f2" class="bulleted-list"><li style="list-style-type:disc">Interaction (IxD) Designer</li></ul><ul id="8c25ae79-3634-44a7-8a3b-79022f89079e" class="bulleted-list"><li style="list-style-type:disc">Visual Designer</li></ul><h2 id="c213badd-c20a-4c62-b183-7ea52d7383fa" class="">Specifications:</h2><hr id="e808a412-103e-4bec-bc3d-4d081b946ebf"/><p id="08912281-66f6-4af0-b12e-dd4edaafd262" class=""><strong>Duration: </strong>1 Week<strong> </strong>Initial MVP, Ongoing Development and Testing</p><p id="f8c8090a-f61f-4c3a-8083-a79d8d1e9021" class=""><strong>Tools:</strong> Figma, Adobe Illustrator,  Adobe Photoshop</p><p id="2cdfee2a-5006-4ed6-9cc0-9bc942e96569" class="">
+</p></div></div><hr id="f5cf9199-4612-425a-be8e-2749225bbad2"/><figure id="ceb728f2-ea0f-4777-8d56-c4e23137b669" class="image"><a href="https://images.unsplash.com/photo-1516156008625-3a9d6067fab5?ixlib=rb-4.0.3&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb"><img style="width:100%" src="https://images.unsplash.com/photo-1516156008625-3a9d6067fab5?ixlib=rb-4.0.3&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb"/></a></figure><h2 id="da363d21-4f3b-4b93-9df5-9fbf89171f8d" class="">Overview</h2><hr id="f23bb8e4-babc-4f4e-99fd-1565eef0ac93"/><p id="29be4949-1166-406f-82f7-94e85efb2f5a" class="">During the early stages of this project and our software builds we got most of the functionality we needed through a combination of api calls, prebuilt DocuSign solutions and clever usage of our email send service, Sendgrid. The main objective was to facilitate home sellers easily reviewing an offer with an agent and then seamlessly transitioning to signing the REPC document. As we grew it became obvious we needed a more tailored and custom approach to this process that would allow agents to handle multiple transactions processes at once. </p><p id="0c309c9e-4e17-4ca4-b5f5-d3352ae85675" class="">
+</p><h2 id="16d4fa90-0cd8-441d-8f51-023ee8419548" class="">Design Process</h2><hr id="ffc7f9c7-774d-4fd5-ac36-db4f8d79493f"/><div id="1a1e2d26-a418-430d-8b2d-b75d322a2710" class="column-list"><div id="332174dd-4eda-4bc3-9307-7438850298bf" style="width:25%" class="column"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="3f8844aa-ec2d-4d6c-a673-dce6a5d09a31"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/book-closed_gray.svg"/></div><div style="width:100%">Research</div></figure></div><div id="c03e5119-c76a-48a9-afdc-9987696d4b1d" style="width:25%" class="column"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="8164fcb3-575c-4aeb-8c26-7499ed683329"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/map_gray.svg"/></div><div style="width:100%">Strategy</div></figure></div><div id="9582d3ac-30c7-482a-bd0b-c9d9f45d9909" style="width:25%" class="column"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="a42a8fe6-20ab-47c9-a3f3-3abe16b477cc"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/color-palette_gray.svg"/></div><div style="width:100%">Design </div></figure></div><div id="9b9b8375-e276-4246-9ca4-fa127edb3c32" style="width:25%" class="column"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="ed7e4eaa-281d-48a6-ba2f-671479e7d900"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/chemistry_gray.svg"/></div><div style="width:100%">Test</div></figure></div></div><hr id="0ca19b6d-db15-4839-82fe-9c5261881d60"/><h2 id="20e3966b-34e1-4e88-8576-091f433f0e00" class="">Research &amp; Define Problems</h2><hr id="73b2e8ac-abf5-40bf-b452-071b43446b0e"/><p id="817e67c9-29c6-4fa0-b29a-cba1bccd2ad9" class="">As part of building the <a href="Real%20Estate%20Transactions%20Brick%20(WIP)%20c0ae2f166dea42828f082f4142dadf67.html">Kiln Software</a> we scoped out the path that a real estate transaction would take through our system. This needed to include the sales funnel that brought the lead in,  follow it through the negotiation process using the My Brick Offer Seller Portal, and then through renovation, evaluation and eventually disposition of the contract using the <a href="https://www.notion.so/E-Commerce-Property-Brick-Marketplace-f05a42f4f8d6465982360ae6430271c3?pvs=21">Brick Marketplace</a>. </p><p id="29d71066-b8fa-4903-bdee-fdd331e29a1a" class="">
+</p><figure id="adc57b32-f080-4086-bce2-859668e7278e" class="image"><a href="Real%20Estate%20Transactions%20Brick%20(WIP)%20c0ae2f166dea42828f082f4142dadf67/Path_of_a_property_MVP_(1).png"><img style="width:1152px" src="Real%20Estate%20Transactions%20Brick%20(WIP)%20c0ae2f166dea42828f082f4142dadf67/Path_of_a_property_MVP_(1).png"/></a><figcaption>Map of Brick Property Process</figcaption></figure><h3 id="dde46b1e-ccc8-4691-9920-1e703fe0a259" class="">Findings</h3><ul id="66d73aec-56e4-47be-b273-e86bdaac2858" class="bulleted-list"><li style="list-style-type:disc">Many of our sellers were owners with multiple properties and we aren&#x27;t creating an experience that promotes repeat customers.</li></ul><ul id="04bbcebf-ab39-42de-bd55-94588679ac66" class="bulleted-list"><li style="list-style-type:disc">We are losing out on opportunities because we aren&#x27;t providing agents with the tools they need to present offers in a way that drives the transaction forward. </li></ul><ul id="6b5e25f5-07bc-4034-a58d-4709ff399f30" class="bulleted-list"><li style="list-style-type:disc">Real estate addendums are a necessary part of the contract process and result in a lot of back-and-forth communication that wasn&#x27;t being recorded or verified.</li></ul><h3 id="ff9003ba-fb9a-44ab-bda3-363551ef34e1" class="">Problems</h3><ul id="ad38f44b-bdd3-47eb-8789-ebd87b793627" class="bulleted-list"><li style="list-style-type:disc">Multiple addendums add escalating complexity to the process as well as increased user drop off points.  Each time a user is required to sign an addendum they have to leave the platform, sign a document via DocuSign and then return. </li></ul><ul id="fd462a3d-6fd2-4de6-a1c3-50a039422898" class="bulleted-list"><li style="list-style-type:disc">Communications that take place off-platform don’t provide managers the tools they need to review transactions for future process improvements. They also add complexity for the sellers who have to figure out the best way to communicate with their agent. </li></ul><ul id="db526406-8abd-41ec-a9bc-1a63f54ffdc4" class="bulleted-list"><li style="list-style-type:disc">DocuSign and SendGrid both have API calls and analytics tools that we aren&#x27;t using now because they haven’t been properly integrated. </li></ul><ul id="076b4651-bc7c-481f-9b0e-a09721e9f9ec" class="bulleted-list"><li style="list-style-type:disc">As a team we wanted to promote trust and build a brand that would instill confidence in sellers and create repeat customers. </li></ul><h2 id="4323eb8b-6ad1-4379-8fd4-22c68ebe093c" class="">Strategy &amp; Analysis</h2><hr id="8370aee1-5e3c-4f1c-92fe-f24bad3a513e"/><p id="4521e6eb-6c1c-4630-a3db-1756c322fe48" class="">In building out our map of property transactions the piece that took the longest was how the 2 systems would interact when evaluating an addendum.  This is where we explored multiple options before landing on the one that was harder to develop but more intuitive and easier for the seller. </p><p id="e3d89680-df31-4f39-b020-c7c619a7ac38" class="">We would present as many versions of an addendum as needed until the seller approved and then propose a single finalized legal addendum for signing. this allowed us to limit API calls to our signing platform and the number of times that we required a seller to navigate away from the Brick Offer Portal.</p><h3 id="0b68bf3d-402d-49b5-b507-2bbf2b3093b1" class="">Decisions</h3><div id="b9740e3d-8398-4131-b4a6-48c0deac3ae6" class="column-list"><div id="3e6acd63-24fa-4653-9b6d-b08c8246d779" style="width:56.25%" class="column"><ul id="d4304972-8ed0-4796-a6ba-f8a0b6299c86" class="bulleted-list"><li style="list-style-type:disc">Addendums will be looped until they are ready to sign and then they will sign one single addendum instead of multiple.</li></ul><ul id="23c16622-1913-4375-a63a-f46381771c17" class="bulleted-list"><li style="list-style-type:disc">To save on contract costs and development time we wont embed the Docusign portal into our software but instead use their API calls to send the user to sign the paperwork and then return them to a confirmation screen after the signing is complete. </li></ul><ul id="4ce62436-0574-4d40-9004-5aedbe6350c6" class="bulleted-list"><li style="list-style-type:disc">Feedback prompts will be added for both the REPC document evaluation and addendums to encourage communication in platform.</li></ul><ul id="b8b0b792-9b5a-4fcb-9749-b004b2eaf2aa" class="bulleted-list"><li style="list-style-type:disc">Further chat features will be pushed off to a later date.</li></ul><p id="e6d8c709-3b98-4598-a51f-e8065f85f4d2" class="">
+</p></div><div id="48c2ae4c-26ce-40e2-820f-29e41800267e" style="width:43.75%" class="column"><figure id="4f3bffa9-5644-437d-9119-5486c5fac51b" class="image"><a href="Lead%20Gen%20My%20Brick%20Offer%20efb05b5f732c45deaa31cdfff0266f9a/Path_of_a_property_MVP_(1).png"><img style="width:336px" src="Lead%20Gen%20My%20Brick%20Offer%20efb05b5f732c45deaa31cdfff0266f9a/Path_of_a_property_MVP_(1).png"/></a><figcaption>Addendum Feedback Loop</figcaption></figure></div></div><p id="dd49bee3-3075-415f-a2fd-97b39d2930c3" class="">
+</p><h2 id="e9b63c0a-4361-4614-a7e1-9f144984d1e4" class="">Design &amp; Prototype Solutions</h2><hr id="2b6300ab-5e70-4336-9740-df8f9302490f"/><p id="67f9aa18-150f-4e23-aefe-b0ef6023ed2f" class="">Designs were focused on allowing users to clearly see the branding and offering of Brick while presenting information in clear and easy to see language and visuals. We wanted to ensure people were clear about the offer we prseented before they ever saw the more complex legal language in the actual document that they would sign. </p><div id="46715816-f4d7-4cb4-b808-ff63523d20f0" class="column-list"><div id="d6b4a29b-99ad-41c4-a070-7d6950b4398b" style="width:25%" class="column"><figure id="3af63ad0-ad46-461f-8e23-12d0a0b7df6d" class="image"><a href="Lead%20Gen%20My%20Brick%20Offer%20efb05b5f732c45deaa31cdfff0266f9a/brick.offer.portal.png"><img style="width:1920px" src="Lead%20Gen%20My%20Brick%20Offer%20efb05b5f732c45deaa31cdfff0266f9a/brick.offer.portal.png"/></a><figcaption>Initial Offer</figcaption></figure></div><div id="3a9a2fe9-6b62-427b-a47b-1625ba4e0260" style="width:25%" class="column"><figure id="254b895e-fecb-48dd-9a64-4d0872e56c15" class="image"><a href="Lead%20Gen%20My%20Brick%20Offer%20efb05b5f732c45deaa31cdfff0266f9a/brick.offer.portal.feedback.png"><img style="width:1920px" src="Lead%20Gen%20My%20Brick%20Offer%20efb05b5f732c45deaa31cdfff0266f9a/brick.offer.portal.feedback.png"/></a><figcaption>Offer Rejected - Feedback Requested</figcaption></figure></div><div id="44c9efd2-0249-47b5-8682-7ff24a979d10" style="width:25%" class="column"><figure id="0f05b072-e0e5-487a-a971-b1240876bc16" class="image"><a href="Lead%20Gen%20My%20Brick%20Offer%20efb05b5f732c45deaa31cdfff0266f9a/brick.offer.portal.addendum.png"><img style="width:1920px" src="Lead%20Gen%20My%20Brick%20Offer%20efb05b5f732c45deaa31cdfff0266f9a/brick.offer.portal.addendum.png"/></a><figcaption>New Addendum</figcaption></figure></div><div id="71622dd7-c7e5-4e52-baa1-01a62fe028e9" style="width:25%" class="column"><figure id="2414fda6-db24-4aaf-a358-9840069279b2" class="image"><a href="Lead%20Gen%20My%20Brick%20Offer%20efb05b5f732c45deaa31cdfff0266f9a/brick.offer.portal.accepted.png"><img style="width:1920px" src="Lead%20Gen%20My%20Brick%20Offer%20efb05b5f732c45deaa31cdfff0266f9a/brick.offer.portal.accepted.png"/></a><figcaption>Accepted Contract</figcaption></figure></div></div><h3 id="f076dbe2-b32c-4771-81fe-c44f4b72bd27" class="">Mobile Designs</h3><p id="ce4b9cb3-d8dd-4f2e-b782-1eec7a3907bc" class="">All the designs were made to be accessible on mobile something we weren&#x27;t focused on for our backend Kiln Product.  Sellers needed to be able to pull this up on any device and easily see what their property could be sold for and what the benefits of working with our company were.</p><div id="31dc0e34-292f-4eb9-9446-9562e14ee2f5" class="column-list"><div id="e548a5be-b28b-4d7b-a962-c5d33fb0ec75" style="width:25%" class="column"><figure id="f78953a9-2e0b-47d6-b2eb-9d8561af2c84" class="image"><a href="Lead%20Gen%20My%20Brick%20Offer%20efb05b5f732c45deaa31cdfff0266f9a/myoffer.mobile__1.png"><img style="width:390px" src="Lead%20Gen%20My%20Brick%20Offer%20efb05b5f732c45deaa31cdfff0266f9a/myoffer.mobile__1.png"/></a></figure></div><div id="9ebfe2aa-23d8-4f04-891e-120b985b4c10" style="width:25%" class="column"><figure id="37a70718-d4be-49fd-878a-21ad0bfbd87f" class="image"><a href="Lead%20Gen%20My%20Brick%20Offer%20efb05b5f732c45deaa31cdfff0266f9a/myoffer.mobile__2.png"><img style="width:390px" src="Lead%20Gen%20My%20Brick%20Offer%20efb05b5f732c45deaa31cdfff0266f9a/myoffer.mobile__2.png"/></a></figure></div><div id="5151d4b3-dbf1-4ae0-b233-b899f661e3ba" style="width:25%" class="column"><figure id="d19720e4-afa9-4a2a-9802-043ff4023949" class="image"><a href="Lead%20Gen%20My%20Brick%20Offer%20efb05b5f732c45deaa31cdfff0266f9a/myoffer.mobile.addendum.png"><img style="width:390px" src="Lead%20Gen%20My%20Brick%20Offer%20efb05b5f732c45deaa31cdfff0266f9a/myoffer.mobile.addendum.png"/></a></figure></div><div id="6c00ceea-8db0-4b1d-87a9-7aceaa0be6ea" style="width:25%" class="column"><figure id="8b340577-436f-4b99-95eb-29893547d762" class="image"><a href="Lead%20Gen%20My%20Brick%20Offer%20efb05b5f732c45deaa31cdfff0266f9a/myoffer.mobile.png"><img style="width:390px" src="Lead%20Gen%20My%20Brick%20Offer%20efb05b5f732c45deaa31cdfff0266f9a/myoffer.mobile.png"/></a></figure></div></div><h2 id="250395d7-6883-4ec5-af22-a2a6464fee6a" class="">Test &amp; Iterate</h2><hr id="9a668221-ac0f-433b-a481-0805774a5a8e"/><ul id="cbd2d5f0-aba6-4264-84c4-81c28f945328" class="bulleted-list"><li style="list-style-type:disc">We found that sellers had serious reservations initially when clickign the link adn accepting the terms and conditions. they thoguth they were accepting the offer. and we had to change the stage that htis step was recorded to stop a critical drop off.</li></ul><ul id="bc459b03-b5d3-46d2-9871-e80dd070a087" class="bulleted-list"><li style="list-style-type:disc">It was still not a great experience to take people to an external website to sign the legal document.  In the  future it would be critical to develop an embedded signing software solution.</li></ul><h2 id="c0069225-d73e-4883-80f8-dfe01824f247" class="">Lessons Learned/Final Thoughts</h2><hr id="fc6114e5-708b-46d3-a3c3-b6a77ed199f0"/><p id="8ca24a71-90f2-45eb-b9b7-c4471e097ba0" class="">When cost and timelines are a factor you have to make some serious sacrifices to the design and implementation of the product. I would have loved to have an embedded signing experience, additional chat and notifications features and data visualizations to help sell the offer but we had to make hard decisions about what was going to be built first to fund additional development.</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

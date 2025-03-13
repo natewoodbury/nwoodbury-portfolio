@@ -1,0 +1,688 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Real Estate Transactions | Brick. (WIP)</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: undefined; }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-transparentGray { background-color: undefined; }
+.select-value-color-translucentGray { background-color: undefined; }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="c0ae2f16-6dea-4282-8f08-2f4142dadf67" class="page sans"><header><div class="page-header-icon undefined"><img class="icon" src="https://www.notion.so/icons/wall_gray.svg"/></div><h1 class="page-title">Real Estate Transactions | Brick. (WIP)</h1><p class="page-description"></p><table class="properties"><tbody></tbody></table></header><div class="page-body"><h3 id="0033b86e-10cd-4039-b993-fa38c5645f3b" class="">Company</h3><p id="4983f5d4-8d8d-4084-baa5-85ea7299d1b2" class="">Brick is a real estate and property management startup based out of Utah. I joined the company in its early stages and worked with the founders and growing employees to build a brand, design software and experiences and strategy for the product. this included several pivots as we worked to find our place in the crowded prop-tech market.</p><div id="a20ee3ad-565e-45cd-a0de-8c224c3a7033" class="column-list"><div id="fc62033f-cb77-41b6-9202-b0b8743093ac" style="width:56.25%" class="column"><h3 id="2676ff0d-dca3-4683-9c7f-ac26f8c74031" class="">Deliverables:</h3><ul id="ad47c531-70a8-4825-8f08-d66fde0b9ba2" class="bulleted-list"><li style="list-style-type:disc"><strong>Interaction Design</strong><ul id="79b86532-e027-4b89-942e-d20bd4c3eb70" class="bulleted-list"><li style="list-style-type:circle">High Fidelity Interactive Prototypes</li></ul></li></ul><ul id="8dc71dbf-990d-446a-a5b1-145b9a10a2c6" class="bulleted-list"><li style="list-style-type:disc"><strong>UI/UX Design</strong><ul id="0ffc3450-47bd-4c90-8c17-16ae7e60a469" class="bulleted-list"><li style="list-style-type:circle">competitive anlyasis</li></ul><ul id="1eb80c56-2bca-4658-8922-15302e72c870" class="bulleted-list"><li style="list-style-type:circle">Personas</li></ul><ul id="94db5826-beb1-422e-9c79-2d42269ab68b" class="bulleted-list"><li style="list-style-type:circle">User Journeys and Task flow</li></ul><ul id="b31d61c4-0e73-4b96-b064-4439dd83995f" class="bulleted-list"><li style="list-style-type:circle">Site Map</li></ul><ul id="11232f40-0298-4c30-9b93-401d577160cf" class="bulleted-list"><li style="list-style-type:circle">Low Fidelity Wireframes</li></ul><ul id="d242fcdf-9273-4832-b536-b71e624d48d1" class="bulleted-list"><li style="list-style-type:circle">High FIdelity Mockups and Prototypes</li></ul><ul id="cc29ffd3-601d-4037-b179-9de7c87ad4a0" class="bulleted-list"><li style="list-style-type:circle">Design System and UI Kit</li></ul><ul id="6552a398-b2af-4064-9771-ed21bf61049b" class="bulleted-list"><li style="list-style-type:circle">Usability Testing</li></ul><p id="e796f64c-31d1-4f6f-87f7-130fe478d7ae" class="">
+</p></li></ul></div><div id="137fb76c-9108-4c06-8632-bbf099300762" style="width:43.75%" class="column"><h3 id="cffbbc98-c9c9-413f-ba79-599d042c8772" class="">My Roles:</h3><ul id="bfbd53a5-dd0b-4a28-8a8e-13ae8eda2b34" class="bulleted-list"><li style="list-style-type:disc">User Experience (UX) Designer</li></ul><ul id="b72a43cc-15e6-4615-8e4a-a3baa63f9ed9" class="bulleted-list"><li style="list-style-type:disc">User Interface (UI) Designer</li></ul><ul id="17569b16-82ef-4a95-878e-75f7f8cdd172" class="bulleted-list"><li style="list-style-type:disc">Visual Designer</li></ul><hr id="2448be75-f303-4d09-8c0f-c137b8441dca"/><h3 id="11b9c12e-2073-4d5e-ada7-dabc944cafef" class="">Specifications:</h3><p id="5c9fd5f7-152a-41d5-bbfe-b485ad1cd338" class=""><strong>Duration: </strong> Ongoing Development</p><p id="03c1f1dc-3bf7-4b1a-a955-4cc4f7291179" class=""><strong>Tools:</strong> Adobe XD, Illustrator,  Photoshop</p><p id="9bf69da2-5a0e-4d17-a1c6-54c086069c8b" class="">
+</p></div></div><hr id="c2ba00b1-0030-4c5f-b29c-fc776dd98440"/><figure id="b41666ea-fcdf-4959-be81-db04796eac20" class="image"><a href="https://images.unsplash.com/photo-1510629326852-3f0946701bc6?ixlib=rb-4.0.3&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb"><img style="width:100%" src="https://images.unsplash.com/photo-1510629326852-3f0946701bc6?ixlib=rb-4.0.3&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb"/></a></figure><h3 id="294fae1c-e6d8-40c1-b1a9-ebb44a1d680e" class="">Overview</h3><hr id="64b46b58-e3e2-4390-bc43-8cc3df0ac225"/><p id="2d470689-2e6c-4d92-a45f-2e6555bbf1ed" class="">I was tasked with designing a light weight web application for managing the signing legal real real estate contracts. It also needed to facilitate various teams and permissions for each of the departments and agents who would touch the transaction and ensure that the APIs were carefully considered and researched to best impelment our solutions.</p><p id="2a3de088-4b40-4276-b4a7-3affdec88ddd" class="">
+</p><h3 id="a85c2f7a-e8ef-4247-9437-0d04162940b3" class="">Design Process</h3><hr id="cfa011cd-4442-44f4-a7cc-ae227993dbca"/><div id="4e8e4a51-6b57-46be-854b-ccef746e51c7" class="column-list"><div id="0349f738-80cd-4219-8f24-c2d584e4e287" style="width:25%" class="column"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="4bc9d39f-b3af-4fb8-b5f6-4d6ab25134f1"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/book-closed_gray.svg"/></div><div style="width:100%">Research</div></figure></div><div id="623f572c-2048-4646-9469-ca6990bc73cc" style="width:25%" class="column"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="c98071d9-fd4b-4252-afe7-c0cb559c8a52"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/map_gray.svg"/></div><div style="width:100%">Strategy</div></figure></div><div id="a436929f-944b-4471-b59d-c6c925a3cdf5" style="width:25%" class="column"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="1333cdfc-7337-43e8-bd69-0a5764f6dced"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/color-palette_gray.svg"/></div><div style="width:100%"><p id="0239e7dc-cbf3-42f6-a204-ec4997c63535" class="">Design</p></div></figure></div><div id="361b9589-b275-4964-a104-44833bd711bd" style="width:25%" class="column"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="e6464ed3-9a7b-49e6-bcaa-c04c3a875770"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/chemistry_gray.svg"/></div><div style="width:100%">Test</div></figure></div></div><hr id="16b735f0-e8dd-42e4-a06e-88faf5463545"/><h1 id="0b8c4861-65f4-410f-88d7-6cd35ac36240" class="">Research &amp; Analysis</h1><hr id="315fd65d-b013-4508-b92b-60f199cacc9e"/><ul id="207c52d8-6dd9-4b9a-a4b1-0f4ed8670386" class="bulleted-list"><li style="list-style-type:disc">much of the current off-market space is not very reputable. </li></ul><ul id="8859b03d-d6f9-4dce-989d-840ae62557ec" class="bulleted-list"><li style="list-style-type:disc">there is a real need for this kind of service and we would like to legiitmize it and provide a trusted brand within the space. </li></ul><ul id="d68a0542-f1f2-449a-bb75-f04e36a1b0ef" class="bulleted-list"><li style="list-style-type:disc">Negotiations of a contract will continue to be an ongoing issue.</li></ul><h3 id="2d75292c-ed4b-4332-b439-88eb68a6b41a" class="">Problems</h3><hr id="51bf3e54-1e2e-4334-82c0-aa00817e7ce3"/><ul id="10034aef-3013-4640-aab5-39de0742b68d" class="bulleted-list"><li style="list-style-type:disc">Docusign integration</li></ul><ul id="c2e285af-2430-4fe9-a85a-2c3c752f1581" class="bulleted-list"><li style="list-style-type:disc">black knight and scout integration</li></ul><ul id="7e1874fa-01aa-4f11-a494-5c6bde0f7805" class="bulleted-list"><li style="list-style-type:disc">email marketing integration and support. </li></ul><h3 id="ac64c040-6d59-4276-a30c-1a6404f42081" class="">Proposed Solutions</h3><h3 id="f8b47cc9-ee73-45d6-b967-fcecdef6a35e" class="">Research</h3><figure id="b3c84a9a-886a-4d0c-b93d-95cd207356a8" class="image"><a href="Real%20Estate%20Transactions%20Brick%20(WIP)%20c0ae2f166dea42828f082f4142dadf67/Path_of_a_property_MVP.png"><img style="width:2231px" src="Real%20Estate%20Transactions%20Brick%20(WIP)%20c0ae2f166dea42828f082f4142dadf67/Path_of_a_property_MVP.png"/></a></figure><figure id="1371f7ac-ddb6-4e98-bb05-1c8c4f3c83fc" class="image"><a href="Real%20Estate%20Transactions%20Brick%20(WIP)%20c0ae2f166dea42828f082f4142dadf67/Path_of_a_property_MVP_(1).png"><img style="width:1104px" src="Real%20Estate%20Transactions%20Brick%20(WIP)%20c0ae2f166dea42828f082f4142dadf67/Path_of_a_property_MVP_(1).png"/></a></figure><h3 id="33c7dbfa-26a4-4bc2-b01c-640738da0394" class="">Solutions</h3><ul id="fbb0a923-7633-4fb3-86d5-cb77953d6e4f" class="bulleted-list"><li style="list-style-type:disc">creating a test button for sending out a mass email to 10k plus people</li></ul><ul id="5e2937b0-56f6-4d0d-ba23-ae964902ba2b" class="bulleted-list"><li style="list-style-type:disc"></li></ul><h3 id="c967c654-a403-48c1-9452-8b9182cdbb21" class="">Next Steps</h3><p id="caa27202-19d9-4f7f-a46c-d1f99b482477" class="">Design Implementation &amp; Handoff</p><p id="dd77af93-35b4-460d-9c36-eee8780d4238" class="">Maintenance</p><h3 id="4e8f68eb-0f9f-4918-9d4f-ed1b1ffb2dff" class="">Lessons Learned/Final Thoughts</h3><p id="2bd08ebf-a23e-45ed-9a4a-b5d93ff49869" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

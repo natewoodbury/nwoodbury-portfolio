@@ -1,0 +1,689 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Logos &amp; Branding | Brick.</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: undefined; }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-transparentGray { background-color: undefined; }
+.select-value-color-translucentGray { background-color: undefined; }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="34515155-d00b-4c4f-a435-f9905e7d1774" class="page sans"><header><div class="page-header-icon undefined"><img class="icon" src="https://www.notion.so/icons/color-palette_gray.svg"/></div><h1 class="page-title">Logos &amp; Branding | Brick.</h1><p class="page-description"></p><table class="properties"><tbody></tbody></table></header><div class="page-body"><h3 id="fcb3637f-b38b-4132-ad9f-897e7cf98467" class="">Company</h3><p id="1b1c2988-11d7-4cbc-97cc-2142fbf27e8c" class="">Brick is a real estate and property management startup based out of Utah. I joined the company in its early stages and worked with the founders  to build a brand, design software and experiences and craft strategy for the product and it&#x27;s development. This included several pivots as we worked to find our place in the crowded prop-tech market.</p><div id="befc608a-8da4-47c0-bab3-ee4d0530b029" class="column-list"><div id="844ba473-9fd2-42ee-b297-b00ced6743e4" style="width:56.25%" class="column"><h3 id="e7c739e9-96ef-438b-9633-4f6e64b38b79" class="">Deliverables:</h3><hr id="79929ca3-b110-4ab8-9ec3-ee686b0e6ed7"/><ul id="28280968-8923-4cd3-9901-aac8ed6891ec" class="bulleted-list"><li style="list-style-type:disc"><strong>Graphic Design</strong><ul id="6d213526-6666-4983-8817-7e3394ffebeb" class="bulleted-list"><li style="list-style-type:circle">Brand Guide</li></ul><ul id="647f6450-2d82-4229-92dc-4d378daf1f0f" class="bulleted-list"><li style="list-style-type:circle">Logo</li></ul><ul id="1669174d-f738-40a4-a348-845c9b021960" class="bulleted-list"><li style="list-style-type:circle">Brand Composition</li></ul><ul id="b9d91943-33cc-463c-932f-279eed5a783d" class="bulleted-list"><li style="list-style-type:circle">Brand Imagery</li></ul><ul id="31d0eb26-d6f6-447e-b5aa-499b5132b2d6" class="bulleted-list"><li style="list-style-type:circle">Collateral Mockups</li></ul></li></ul><p id="9775af1a-13fe-4c4f-80b9-4bc552262ae0" class="">
+</p></div><div id="69a24f03-2235-431c-ae46-9a51b9f50f87" style="width:43.75%" class="column"><h3 id="b455dbd3-081a-4a73-b749-8b958d01150d" class="">My Roles:</h3><hr id="290b9596-9bb9-4f3b-9cd6-f4c318766761"/><ul id="21fced2d-e91d-404f-b553-78ca5d6cee20" class="bulleted-list"><li style="list-style-type:disc">Visual Designer</li></ul><ul id="93b11bcf-b067-4b87-af10-e2e00a3f725a" class="bulleted-list"><li style="list-style-type:disc">Graphic Designer</li></ul><h3 id="e6e19d2a-377a-451a-92f3-38741f104928" class="">Specifications:</h3><hr id="5071a657-d59b-43a9-99c4-1faa51b3c2e4"/><p id="0297084c-a146-4ad2-ba53-cff56689a999" class=""><strong>Tools:</strong> Figma, Adobe Illustrator, Affinity Designer</p><p id="8e32b9ed-7930-488e-a7aa-b235898d461c" class="">
+</p></div></div><hr id="cbbaadd6-ecd6-4d76-a21c-27d3eb0b2f8b"/><figure id="9686205f-23f7-43e8-8eea-35c27b786ed9" class="image"><a href="https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb"><img style="width:100%" src="https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb"/></a></figure><h2 id="248c8f20-a5e3-44f0-9d35-b1da9f60ff24" class="">Overview</h2><hr id="78f94fba-1f80-4a08-bddf-344044a0b9a6"/><p id="1d61f37f-7fd5-4e60-b070-5ad1f6bc6ad5" class="">We spent just a little time fleshing out a logo and some colors early on as a startup but wanted to avoid going too deep into the branding and logo development until we had settled as company and had a better idea of what our product offerings looked like and how we wanted to present ourselves; what story we wanted to tell.</p><p id="5e283c73-3156-4245-bf50-4fdf9b2153fd" class="">
+</p><h2 id="ee05b245-d1a7-4656-a2ce-e498576917bb" class="">Design Process</h2><hr id="91bae545-2ce1-4db9-ba01-ca1e2d41bad6"/><div id="0a31fc71-18a8-43d0-b794-ba689112a646" class="column-list"><div id="805e5d78-c324-461d-93df-f8da1ba1d33a" style="width:25%" class="column"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="8fd71ad7-9813-4c2e-b261-8ece7ff24ab4"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/book-closed_gray.svg"/></div><div style="width:100%">Research</div></figure></div><div id="e9662236-980a-44f3-b0d5-3be60016be83" style="width:25%" class="column"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="7ed1ad52-3bbb-4a59-8a3a-d29465e5bf77"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/map_gray.svg"/></div><div style="width:100%">Refine</div></figure></div><div id="bd22e275-3652-4041-99b3-ec181b49c79b" style="width:25%" class="column"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="83646518-0ca5-4a08-8062-f554c60d730a"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/color-palette_gray.svg"/></div><div style="width:100%">Design </div></figure></div><div id="dcb0d372-1d10-44f5-a936-f4e4423f6b31" style="width:25%" class="column"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="579a996b-e2fc-4561-9756-1403f232d7ef"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/chemistry_gray.svg"/></div><div style="width:100%">Iterate</div></figure></div></div><hr id="cdb8518c-0161-4eea-b376-6af457a1d0b1"/><h2 id="f6881ad6-824b-4ee7-a45e-4df154eee658" class="">Research &amp; Explore</h2><hr id="2b64ad8b-0503-40c5-952e-a63271e3e2d9"/><p id="44574af9-1842-43ae-a396-22b1c0eca405" class="">The original logos and word marks were simple sans-serif designs that were functional but did not provide anything unique or special about the company or what the brand could become.</p><div id="66463130-a59a-4b5e-81f8-974ffa42e675" class="column-list"><div id="13c41e86-aea4-4f03-bdd4-0a28dcee3bcd" style="width:49.99999999999999%" class="column"><figure id="97c2b1db-278c-4d01-b8c1-606096ec49c6" class="image"><a href="Logos%20&amp;%20Branding%20Brick%2034515155d00b4c4fa435f9905e7d1774/brick.logo_new-07.png"><img style="width:2855px" src="Logos%20&amp;%20Branding%20Brick%2034515155d00b4c4fa435f9905e7d1774/brick.logo_new-07.png"/></a></figure><figure id="bad09785-f52f-48c0-a15d-56deab142d7a" class="image"><a href="Logos%20&amp;%20Branding%20Brick%2034515155d00b4c4fa435f9905e7d1774/bricklogo_(15).png"><img style="width:192px" src="Logos%20&amp;%20Branding%20Brick%2034515155d00b4c4fa435f9905e7d1774/bricklogo_(15).png"/></a></figure></div><div id="a2c035fb-230e-4d6f-9c7e-27d8c213311d" style="width:49.99999999999999%" class="column"><figure id="d4ca0880-7c77-466e-af0b-dbd360afb7cc" class="image"><a href="Logos%20&amp;%20Branding%20Brick%2034515155d00b4c4fa435f9905e7d1774/bricklogo_(7).png"><img style="width:3096px" src="Logos%20&amp;%20Branding%20Brick%2034515155d00b4c4fa435f9905e7d1774/bricklogo_(7).png"/></a></figure><figure id="93421eb4-3bd6-4d53-8ed4-079c1ca5ee2f" class="image"><a href="Logos%20&amp;%20Branding%20Brick%2034515155d00b4c4fa435f9905e7d1774/bricklogo_(13).png"><img style="width:192px" src="Logos%20&amp;%20Branding%20Brick%2034515155d00b4c4fa435f9905e7d1774/bricklogo_(13).png"/></a></figure></div></div><h3 id="71060e90-dfd4-4c92-8ea7-83c029b0209b" class="">Findings</h3><ul id="b97646e0-71ce-4a51-abd6-42b10ff5e4bd" class="bulleted-list"><li style="list-style-type:disc">One of the core issues with branding and design that we wanted to cover was the expansion of our product offerings under the umbrella of “Brick.”  This included things like:<ul id="ed9480f4-0a8b-4564-b73e-76272c457643" class="bulleted-list"><li style="list-style-type:circle"><strong>Brick Equity</strong> - A product for improving access to home equity lines of credit.</li></ul><ul id="eac6a252-c4c5-4a2f-a0b1-95e51484b765" class="bulleted-list"><li style="list-style-type:circle"><strong>Brick Marketplac</strong>e - A Zillow-like experience for off-market real estate contracts.</li></ul><ul id="d7db22c0-fefe-4480-8e64-aa5cf17ad5f9" class="bulleted-list"><li style="list-style-type:circle"><strong>Brick Kiln</strong> - Our proprietary property management and CRM software and potential SAAS product.</li></ul><ul id="93aa4d3d-d233-4997-9a2d-d498c4f5d6e2" class="bulleted-list"><li style="list-style-type:circle"><strong>Brick Offer</strong> - Our customer facing portal experience for selling property to Brick.</li></ul><ul id="1d9240a9-f045-498c-84a6-bb518d4adb99" class="bulleted-list"><li style="list-style-type:circle"><strong>Brick Capital</strong> - Real estate investment resource.</li></ul></li></ul><ul id="19ef7033-086a-4686-9d0c-499c1d4c09bd" class="bulleted-list"><li style="list-style-type:disc">We also knew that we wanted a singular logo that could be placed on any of our products and immediately be recognized as being a piece of the greater whole. </li></ul><ul id="eaf56963-b155-47f1-906e-d2b2f3dcfa99" class="bulleted-list"><li style="list-style-type:disc">We realized that we would need additional logos and branding that would have to maintain a similar design language to allow for differentiation without losing the core brand.</li></ul><div id="969f496a-8f6b-4628-9de4-4071cf4731cd" class="column-list"><div id="e8a67ef5-9ab0-4deb-9597-ef07ac699c6e" style="width:50%" class="column"><figure id="fb388966-755a-4e8f-8e3d-415c4052a09c" class="image"><a href="Logos%20&amp;%20Branding%20Brick%2034515155d00b4c4fa435f9905e7d1774/Untitled.png"><img style="width:528px" src="Logos%20&amp;%20Branding%20Brick%2034515155d00b4c4fa435f9905e7d1774/Untitled.png"/></a><figcaption>The logo in a circle and similar fonts for each of the intuit brands was a recurring inspiration that was brought up.</figcaption></figure></div><div id="cb059a3b-9bcf-4a3a-a102-0e3f69ab72c8" style="width:50%" class="column"><figure id="da22bb75-4ef4-4154-8f4a-22498f0a5ad6" class="image"><a href="Logos%20&amp;%20Branding%20Brick%2034515155d00b4c4fa435f9905e7d1774/Untitled%201.png"><img style="width:330.984375px" src="Logos%20&amp;%20Branding%20Brick%2034515155d00b4c4fa435f9905e7d1774/Untitled%201.png"/></a><figcaption>Microsoft’s Office Products provided another excellent example of cohesive branding of individual products.</figcaption></figure></div></div><h3 id="d44fdb61-1954-4a3f-89ff-e84d42aef1de" class="">Refine and Analyze</h3><hr id="14953416-01ea-4b6d-a182-06ceb5d6d47f"/><div id="79b90258-5d78-4af1-801f-97892aeb111b" class="column-list"><div id="87ca3a17-90e0-41ca-ad51-c52a11d07a91" style="width:33.33333333333333%" class="column"><figure id="7cfa604f-e330-4a56-85ac-4f0e3437d6a8" class="image"><a href="Logos%20&amp;%20Branding%20Brick%2034515155d00b4c4fa435f9905e7d1774/Page_1.png"><img style="width:3334px" src="Logos%20&amp;%20Branding%20Brick%2034515155d00b4c4fa435f9905e7d1774/Page_1.png"/></a></figure></div><div id="e2cd4cc2-a2c8-4e8e-b403-2722cab2b140" style="width:33.33333333333333%" class="column"><figure id="af2cace2-6108-4ab3-a7bb-e672677ff860" class="image"><a href="Logos%20&amp;%20Branding%20Brick%2034515155d00b4c4fa435f9905e7d1774/Page_4.png"><img style="width:3334px" src="Logos%20&amp;%20Branding%20Brick%2034515155d00b4c4fa435f9905e7d1774/Page_4.png"/></a></figure></div><div id="503a076a-d113-4416-ae16-848e80f117d1" style="width:33.33333333333333%" class="column"><figure id="9164953e-89c3-475e-80a6-66cb9657a384" class="image"><a href="Logos%20&amp;%20Branding%20Brick%2034515155d00b4c4fa435f9905e7d1774/Page_7.png"><img style="width:3334px" src="Logos%20&amp;%20Branding%20Brick%2034515155d00b4c4fa435f9905e7d1774/Page_7.png"/></a></figure></div></div><figure id="6f0000c0-3062-4b9d-84db-a6be9ca7f494" class="image"><a href="Logos%20&amp;%20Branding%20Brick%2034515155d00b4c4fa435f9905e7d1774/brick_capital_hoodie.jpg"><img style="width:480px" src="Logos%20&amp;%20Branding%20Brick%2034515155d00b4c4fa435f9905e7d1774/brick_capital_hoodie.jpg"/></a><figcaption>Being able to quickly mockup logos onto physical objects provides a context that black and white images don’t always convey.</figcaption></figure><h3 id="5a04b170-bea3-4384-91cb-319fbcdd3e93" class="">Decisions</h3><ul id="cef5deaa-6581-407b-bb99-d575bb295a49" class="bulleted-list"><li style="list-style-type:disc">Move away from a letter based logo. </li></ul><ul id="fd41d2b3-66f0-40c5-82d1-6264064af47e" class="bulleted-list"><li style="list-style-type:disc">Work around the square-ish shape of a normal brick. </li></ul><ul id="7a5bd6ca-7353-44f5-839a-6fc73034cfa5" class="bulleted-list"><li style="list-style-type:disc">Lean into energy and excitement aspects of bricks or brickwork<ul id="cc87eada-0b22-4032-8ef7-1a7f0d636c65" class="bulleted-list"><li style="list-style-type:circle">Fire, Heat, Sturdy, Beautiful</li></ul></li></ul><ul id="ed13e281-0350-4070-97c7-272c33a1e342" class="bulleted-list"><li style="list-style-type:disc">Steer clear of construction related iconography and inspiration<ul id="97822be6-f519-4525-bcde-07770147e0fa" class="bulleted-list"><li style="list-style-type:circle">no trowels, mortar, stacks of bricks, buckets etc. </li></ul></li></ul><h2 id="296510ba-25b3-4c26-9540-3d0f3a5cc1ff" class="">Final Designs</h2><hr id="aadfdef3-0dbe-46d2-aab1-13fa4324a347"/><figure id="221c9689-0a8c-4508-81ab-ca598024a7b0" class="image"><a href="Logos%20&amp;%20Branding%20Brick%2034515155d00b4c4fa435f9905e7d1774/Logo.png"><img style="width:707.984375px" src="Logos%20&amp;%20Branding%20Brick%2034515155d00b4c4fa435f9905e7d1774/Logo.png"/></a></figure><div id="b96e40cf-c661-4e81-b72a-05857d782e43" class="column-list"><div id="6ba81a17-d971-4159-bfa7-d4ef38afdf74" style="width:50%" class="column"><figure id="cb79d39d-d5db-4537-a295-e4231bd795a9" class="image"><a href="Logos%20&amp;%20Branding%20Brick%2034515155d00b4c4fa435f9905e7d1774/Typography.png"><img style="width:1440px" src="Logos%20&amp;%20Branding%20Brick%2034515155d00b4c4fa435f9905e7d1774/Typography.png"/></a></figure></div><div id="d5e638cd-8fce-4f1c-a257-0a2bbe01d9c4" style="width:50%" class="column"><figure id="e675daf0-257f-4336-bd10-90bfe131cc3b" class="image"><a href="Logos%20&amp;%20Branding%20Brick%2034515155d00b4c4fa435f9905e7d1774/Color.png"><img style="width:1440px" src="Logos%20&amp;%20Branding%20Brick%2034515155d00b4c4fa435f9905e7d1774/Color.png"/></a></figure></div></div><p id="b1e33d0e-70e4-4ae4-9c3d-c1aec44ffd64" class="">
+</p><h2 id="9ced0807-04ea-474d-816a-d8c294e8209f" class="">Iterate &amp; Refine</h2><hr id="67e531bd-d852-4b65-895c-ce086b5d210e"/><p id="03cd033c-8fbe-44d4-82cc-b1e9121f62cc" class="">We spent some time updating our offerings with the new logo, colors and typography and use that as the basis for informing how we wanted the brand to evolve and the feelings we wanted to evoke. </p><p id="fff5c957-73c2-4bda-9c3d-88f067eacb1a" class="">This led us into developing the composition and Imagery sections of the Brand guide.  Strong colors evoked our company values and the proposition of direct clear information about property and real estate. offset by black and white professionalism that allows the colors to stand out. </p><p id="1ef0bfea-cbe4-4924-b11a-58cd0d6b96c0" class="">Visual elements in the  composition space create patterns and shapes that can be reused in a variety of situations and mediums.</p><div id="0cbb8a88-b51f-41a4-a2da-56e5054b275c" class="column-list"><div id="3d56a709-6c86-4857-b1bc-9b0fd2ddc643" style="width:50%" class="column"><figure id="e6ed14d1-de3d-451b-812f-7b986a121b8a" class="image"><a href="Logos%20&amp;%20Branding%20Brick%2034515155d00b4c4fa435f9905e7d1774/Composition.png"><img style="width:576.984375px" src="Logos%20&amp;%20Branding%20Brick%2034515155d00b4c4fa435f9905e7d1774/Composition.png"/></a></figure></div><div id="6418109c-e20b-4449-ab95-fe360cda8b6b" style="width:50%" class="column"><figure id="d64be6b2-d788-4bf2-8291-ad40f7ab2140" class="image"><a href="Logos%20&amp;%20Branding%20Brick%2034515155d00b4c4fa435f9905e7d1774/Imagery.png"><img style="width:576.984375px" src="Logos%20&amp;%20Branding%20Brick%2034515155d00b4c4fa435f9905e7d1774/Imagery.png"/></a></figure></div></div><p id="17b54b29-90cc-4bb7-b013-d938483b813e" class="">After building out much of the brand guide we were finally able to revisit the products and brands that would be a part of the Brick family.  The time we spent developign the initual designs allowed us to quickly iterate and build out icons and wordmarks for the rest of the suite of products and companies.</p><div id="3d6e9899-28a6-4e15-9fa5-3106045057a3" class="column-list"><div id="541c3320-a0a9-4771-93d2-9add6fa05061" style="width:25%" class="column"><figure id="af370b61-16d3-4ed9-a9c5-c4d84f184838" class="image"><a href="Logos%20&amp;%20Branding%20Brick%2034515155d00b4c4fa435f9905e7d1774/brick-sub-logos_brick-equity.png"><img style="width:288px" src="Logos%20&amp;%20Branding%20Brick%2034515155d00b4c4fa435f9905e7d1774/brick-sub-logos_brick-equity.png"/></a></figure></div><div id="0bd86bd7-f15b-4c60-b814-3e7c47d3ff7f" style="width:25%" class="column"><figure id="9a53b32b-5778-41f5-a84d-bd3e853be87a" class="image"><a href="Logos%20&amp;%20Branding%20Brick%2034515155d00b4c4fa435f9905e7d1774/brick-sub-logos_true-merit-wordmark-51.png"><img style="width:3320px" src="Logos%20&amp;%20Branding%20Brick%2034515155d00b4c4fa435f9905e7d1774/brick-sub-logos_true-merit-wordmark-51.png"/></a></figure></div><div id="366b3a3b-ed89-4f7d-ad71-0c900ef0f4e8" style="width:25%" class="column"><figure id="725b44fa-f784-4384-b98b-8d9bb0e45802" class="image"><a href="Logos%20&amp;%20Branding%20Brick%2034515155d00b4c4fa435f9905e7d1774/brick-sub-logos_brick-kiln-wordmark-51.png"><img style="width:2007px" src="Logos%20&amp;%20Branding%20Brick%2034515155d00b4c4fa435f9905e7d1774/brick-sub-logos_brick-kiln-wordmark-51.png"/></a></figure></div><div id="97df3f79-8cc9-4ec8-8383-5944ca37b7b2" style="width:25%" class="column"><figure id="2fe55b83-4c64-4830-a735-6fdc251bcfc8" class="image"><a href="Logos%20&amp;%20Branding%20Brick%2034515155d00b4c4fa435f9905e7d1774/brick-sub-logos_brick-rewards-wordmark-58.png"><img style="width:2574px" src="Logos%20&amp;%20Branding%20Brick%2034515155d00b4c4fa435f9905e7d1774/brick-sub-logos_brick-rewards-wordmark-58.png"/></a></figure></div></div><h2 id="003cd588-678e-43de-a5db-3762c89aaa8f" class="">Lessons Learned/Final Thoughts</h2><hr id="aca363f1-894c-4ce1-9657-74c7be637884"/><p id="da211f6f-c904-4aaf-af73-9001b2261bd6" class="">One of the recurring themes through this design project was remembering that as much as we try to craft a system and visuals that we think present the brand we want to build, at the end of the day it is so much more than just our design that impacts how consumers and other business view the company and its products.</p><p id="0df839c0-1c54-4bf4-af83-736f250bc040" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

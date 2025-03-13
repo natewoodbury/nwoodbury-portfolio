@@ -1,0 +1,688 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Project Case Study Template</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: undefined; }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-transparentGray { background-color: undefined; }
+.select-value-color-translucentGray { background-color: undefined; }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="78b46073-1701-439f-96bb-2537b09349e6" class="page sans"><header><h1 class="page-title">Project Case Study Template</h1><p class="page-description"></p><table class="properties"><tbody></tbody></table></header><div class="page-body"><h3 id="2e9c70d3-9d92-4283-8f8c-a3e55472fbf5" class="">Company</h3><p id="d2972761-d406-4dd5-a700-7f88edd396ac" class="">Brick is a real estate and property management startup based out of Utah. I joined the company in its early stages and worked with the founders  to build a brand, design software and experiences and craft strategy for the product and it&#x27;s development. this included several pivots as we worked to find our place in the crowded prop-tech market.</p><div id="6b92d39c-240d-452a-8189-1b7746a02aaf" class="column-list"><div id="26c15ea4-685b-4e06-94ab-47b91f13d5b9" style="width:56.25%" class="column"><h3 id="5fb68f41-2220-4b81-846a-3ac3c0b34bf3" class="">Deliverables:</h3><hr id="f7a0efb8-b518-4189-b398-c410db87e2d4"/><ul id="f9e3481a-54db-4129-bb4a-71cf7a48cf05" class="bulleted-list"><li style="list-style-type:disc"><strong>Interaction Design</strong><ul id="9172fbe2-746d-4515-a85c-572d31ee92e4" class="bulleted-list"><li style="list-style-type:circle">High Fidelity Interactive Prototypes for Key tasks</li></ul></li></ul><ul id="a807376e-fc75-44e9-a974-e6e10fbead40" class="bulleted-list"><li style="list-style-type:disc"><strong>UI/UX Design</strong><ul id="270f4f73-386b-4ca1-af19-c8e4e39b6a1f" class="bulleted-list"><li style="list-style-type:circle">competitive anlyasis</li></ul><ul id="21f73ffd-ff35-4680-9ebb-f8cbdc9c9c89" class="bulleted-list"><li style="list-style-type:circle">Personas</li></ul><ul id="5707e29f-c9c0-4355-8381-a28926baf56f" class="bulleted-list"><li style="list-style-type:circle">User Journeys and Task flow</li></ul><ul id="83eb2518-bf46-4517-b379-1c919596f2b4" class="bulleted-list"><li style="list-style-type:circle">Site Map</li></ul><ul id="8f146b50-4234-4cdf-a0df-6d0db429351b" class="bulleted-list"><li style="list-style-type:circle">Low Fidelity Wireframes</li></ul><ul id="16136aa9-fc65-4878-95ef-9ffd6d4722c3" class="bulleted-list"><li style="list-style-type:circle">High FIdelity Mockups and Prototypes</li></ul><ul id="904f9040-b27d-4fab-a6bc-d4a8995b413d" class="bulleted-list"><li style="list-style-type:circle">Design System and UI Kit</li></ul><ul id="d578ecb4-68e6-4f4f-80cc-fbaec16b2140" class="bulleted-list"><li style="list-style-type:circle">Usability Testing</li></ul><p id="4ea4cc92-2561-4058-b713-a6a8ba919a8c" class="">
+</p></li></ul></div><div id="fa7735d5-d231-487d-8c47-7dc7c0ff9c88" style="width:43.75%" class="column"><h3 id="db7e866a-26ba-4758-b1cf-4f48f8ebab34" class="">My Roles:</h3><hr id="600034bd-e254-42f0-b071-2c9cc82ac5b9"/><ul id="79633c3d-07ae-420d-ab34-132332decb4b" class="bulleted-list"><li style="list-style-type:disc">User Experience (UX) Designer</li></ul><ul id="3f05c88c-5e9f-4195-a01a-945048ec8a80" class="bulleted-list"><li style="list-style-type:disc">User Interface (UI) Designer</li></ul><ul id="0aed7cf7-d889-4bbf-8558-a5acd89bb9c9" class="bulleted-list"><li style="list-style-type:disc">Interaction (IxD) Designer</li></ul><ul id="838613b4-fe5f-4b59-a091-b48d4c476817" class="bulleted-list"><li style="list-style-type:disc">Visual Designer</li></ul><h3 id="8dc6d1ba-4538-498f-9ff2-ba8653d4cfd0" class="">Specifications:</h3><hr id="39caca8f-9293-4aa5-af89-3e7729fdd2c4"/><p id="4df4d9ad-cca7-4535-b4df-8bcdf2d6ffb4" class=""><strong>Duration: </strong>6 Week MVP, Ongoing Development</p><p id="2c4488e2-ffda-4856-94c7-e6907775a007" class=""><strong>Tools:</strong> Figma, Illustrator,  Photoshop</p><p id="4d5949cd-b91f-4e89-88cf-0de571a0ca57" class="">
+</p></div></div><hr id="5c554315-5da8-45c5-acea-a4f30ea53afa"/><figure id="3004cb75-c4e6-445b-8475-2ccc1ea25797" class="image"><a href="Property%20Managment%20&amp;%20CRM%20Brick%20Kiln%200a8252d1b2b246e78e2ebe88c33b18c3/AdobeStock_123091886.jpeg"><img style="width:100%" src="Property%20Managment%20&amp;%20CRM%20Brick%20Kiln%200a8252d1b2b246e78e2ebe88c33b18c3/AdobeStock_123091886.jpeg"/></a></figure><h2 id="49bc46f0-967c-483f-b4b8-ac4292b08c41" class="">Overview</h2><hr id="6fc6d9d9-a984-49d8-8c65-a90c2afe396f"/><p id="d5f3898c-6155-4817-84aa-79adf9c5cfb5" class=""><a href="Real%20Estate%20Transactions%20Brick%20(WIP)%20c0ae2f166dea42828f082f4142dadf67.html">Originally</a> built as a Project Management solution to faciliatate the documentation of reale estate transactions the software needed to be reworked to allow our team to move on from Salesforce. This required additional features to support additional project management tools, chat features, tracking logs and CRM features. </p><p id="f1084e90-d3e6-4880-90c9-2c7f7c238dd4" class="">
+</p><h2 id="67813263-511c-4a19-a140-ae16d7ea2e8f" class="">Design Process</h2><hr id="7acc7274-7dbf-4fd5-8276-42a6228617ae"/><div id="8d98420e-1648-44f3-a788-a1d4f89d21fe" class="column-list"><div id="a92b4797-1ae8-4126-affc-06323b6430f6" style="width:25%" class="column"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="6b6f02d1-8ba5-4176-91eb-c249367de978"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/book-closed_gray.svg"/></div><div style="width:100%">Research</div></figure></div><div id="a1130158-3c4b-4b15-bfc4-6d26442cff88" style="width:25%" class="column"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="252499fe-d189-4d95-9c9b-932b560fbe05"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/map_gray.svg"/></div><div style="width:100%">Strategy</div></figure></div><div id="e8431adf-6122-4ad5-b13d-8812571ad129" style="width:25%" class="column"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="ba8e6a10-1b68-43f0-adfd-30b17a5d1425"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/color-palette_gray.svg"/></div><div style="width:100%">Design </div></figure></div><div id="fd99953c-99a6-4e0a-ad23-53815c55cac4" style="width:25%" class="column"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="60bb21b7-9e0e-4b68-b230-c6d0693d34c5"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/chemistry_gray.svg"/></div><div style="width:100%">Test</div></figure></div></div><hr id="c97549b0-07b3-4948-afdb-ed202612d986"/><h2 id="9a2da6d6-4951-479b-b514-ca18cf5785eb" class="">Research &amp; Define Problems</h2><hr id="855c5b40-d443-4885-a799-35981444311d"/><h3 id="eb17c3a9-c6ab-48ff-a99b-18d896aa3242" class="">Findings</h3><ul id="4d33b9a1-9851-4365-94a1-b24720743278" class="bulleted-list"><li style="list-style-type:disc">Implementing chat features<ul id="d3ed8c0f-92a7-4aca-8a30-c2ec636bdd6f" class="bulleted-list"><li style="list-style-type:circle">Is this a true char solution for users? Or a project based solution for the property transactions</li></ul></li></ul><ul id="1d1e0e31-b8ed-4cbd-a36b-0a0da0d2764a" class="bulleted-list"><li style="list-style-type:disc">Task Lists and assignments</li></ul><ul id="33349ccd-cea6-4729-bbe4-9ca7b7358402" class="bulleted-list"><li style="list-style-type:disc">Logging actions on the account</li></ul><ul id="52d6dd28-0032-432d-8729-3f1ad6e3a78f" class="bulleted-list"><li style="list-style-type:disc"></li></ul><h3 id="9ce0e7b7-debc-418d-9c18-4ef5d798c052" class="">Problems</h3><h2 id="f72327d8-0664-4308-b99d-82ed4f8e1857" class="">Strategy &amp; Analysis</h2><hr id="60d72dc4-29e6-4a3d-bd72-0265f4bcdfef"/><ul id="27754c00-e9ed-4381-a229-5f7b0bf05b74" class="bulleted-list"><li style="list-style-type:disc">limit pipeline view depending on user and permissions</li></ul><ul id="93a52256-50a9-426b-981c-154d60368ab4" class="bulleted-list"><li style="list-style-type:disc">create a chat feed with all the actions and messages in one place.</li></ul><div id="96335762-a3b3-4986-8897-0ae4b92987b8" class="column-list"><div id="c8a5c8fc-1ec7-45c2-83cd-0cd0cd1da3f3" style="width:50%" class="column"><ul id="acd6f475-4618-4231-a668-6bd8ba9f104c" class="bulleted-list"><li style="list-style-type:disc">limit tasks to specific projects (assigned to user) - dont introduce additional complexity, you dont need tasks to be global, instead use the project as the main source of separation.</li></ul><ul id="d5778cd1-274f-48e1-a238-4259b6e290ed" class="bulleted-list"><li style="list-style-type:disc"></li></ul><h3 id="48dd5109-f278-474f-a85b-cfdd2978bce6" class="">Decisions</h3><ul id="174336e3-3193-4088-88f3-321c62331627" class="bulleted-list"><li style="list-style-type:disc">this is decisions.</li></ul></div><div id="ee3f90b3-8870-4255-b8f4-5a7beb549b5e" style="width:50%" class="column"><figure id="a222bf58-e565-4929-ae8a-a1aac2b91aa7" class="image"><a href="Property%20Managment%20&amp;%20CRM%20Brick%20Kiln%200a8252d1b2b246e78e2ebe88c33b18c3/CRM.Kilnusers.png"><img style="width:4234px" src="Property%20Managment%20&amp;%20CRM%20Brick%20Kiln%200a8252d1b2b246e78e2ebe88c33b18c3/CRM.Kilnusers.png"/></a></figure></div></div><h2 id="5481fa8d-2075-4594-8038-222e7ec5d640" class="">Design &amp; Prototype Solutions</h2><hr id="1b577987-373e-471b-9d44-46c7e707d370"/><div id="7f3e82ec-18be-49b9-b354-cfa7225f99ce" class="column-list"><div id="37366215-f9e2-4257-a9e0-8b295008eebc" style="width:33.333333333333336%" class="column"><figure id="f8d68654-aeea-4fbc-b834-8a8bda2c099c" class="image"><a href="Property%20Managment%20&amp;%20CRM%20Brick%20Kiln%200a8252d1b2b246e78e2ebe88c33b18c3/kiln-wholesale-pipeline.png"><img style="width:1440px" src="Property%20Managment%20&amp;%20CRM%20Brick%20Kiln%200a8252d1b2b246e78e2ebe88c33b18c3/kiln-wholesale-pipeline.png"/></a><figcaption>Pipeline View</figcaption></figure></div><div id="c66e8341-bf84-46a3-99b9-d892364eb11b" style="width:33.333333333333336%" class="column"><figure id="876bc274-f140-4ae0-9391-0fcb78c96b48" class="image"><a href="Property%20Managment%20&amp;%20CRM%20Brick%20Kiln%200a8252d1b2b246e78e2ebe88c33b18c3/kiln-project-activity.png"><img style="width:1440px" src="Property%20Managment%20&amp;%20CRM%20Brick%20Kiln%200a8252d1b2b246e78e2ebe88c33b18c3/kiln-project-activity.png"/></a><figcaption>Project Based Task Management and Chat Feed</figcaption></figure></div><div id="2fac2a42-634d-47e0-b935-5187c8c57126" style="width:33.33333333333333%" class="column"><figure id="1041f9d2-1597-4787-b1f5-b6b9ff98dbb1" class="image"><a href="Property%20Managment%20&amp;%20CRM%20Brick%20Kiln%200a8252d1b2b246e78e2ebe88c33b18c3/kiln-dashboard-personal.png"><img style="width:1440px" src="Property%20Managment%20&amp;%20CRM%20Brick%20Kiln%200a8252d1b2b246e78e2ebe88c33b18c3/kiln-dashboard-personal.png"/></a><figcaption>User Tasks and Chat Feed</figcaption></figure></div></div><figure id="7bca91d8-c4ed-440e-8eed-3df336fab8c7" class="image"><a href="Property%20Managment%20&amp;%20CRM%20Brick%20Kiln%200a8252d1b2b246e78e2ebe88c33b18c3/Group_249.png"><img style="width:2208px" src="Property%20Managment%20&amp;%20CRM%20Brick%20Kiln%200a8252d1b2b246e78e2ebe88c33b18c3/Group_249.png"/></a></figure><p id="637cf70f-16ba-4d22-a9a0-de13cc8d4b76" class="">
+</p><h2 id="a1dcbc14-aaee-4033-a24d-85f9e4d05a30" class="">Test &amp; Iterate</h2><hr id="8781a352-baae-47a5-bd95-1db073395ef6"/><ul id="59098ca9-a1bf-4999-a119-0f7210809a6d" class="bulleted-list"><li style="list-style-type:disc">Design Implementation &amp; Handoff</li></ul><ul id="cbd2f70d-b7e8-4c28-8d3b-eac2433c1c1f" class="bulleted-list"><li style="list-style-type:disc">Maintenance</li></ul><h2 id="18e4bf97-2250-46a7-b397-d0dbdcf6511b" class="">Lessons Learned/Final Thoughts</h2><hr id="13436f00-5f1c-4c16-b1a4-3e2368b47f06"/><ul id="13f525a1-902c-40ba-a0e8-f7f1da04cb3f" class="bulleted-list"><li style="list-style-type:disc">wish i was a little bit taller, wish i was a baller.</li></ul></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

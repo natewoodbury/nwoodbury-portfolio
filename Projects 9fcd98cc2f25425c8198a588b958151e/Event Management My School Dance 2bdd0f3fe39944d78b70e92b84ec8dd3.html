@@ -1,0 +1,689 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Event Management | My School Dance</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: undefined; }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-transparentGray { background-color: undefined; }
+.select-value-color-translucentGray { background-color: undefined; }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="2bdd0f3f-e399-44d7-8b70-e92b84ec8dd3" class="page sans"><header><div class="page-header-icon undefined"><img class="icon" src="https://www.notion.so/icons/dance_gray.svg"/></div><h1 class="page-title">Event Management | My School Dance</h1><p class="page-description"></p><table class="properties"><tbody></tbody></table></header><div class="page-body"><h3 id="62b88053-2cdd-4ade-8fc3-c216683b2254" class="">Company</h3><p id="2f2dcba7-e3ef-46ae-a545-38509ea655e8" class="">The My School Dance project aimed to streamline the ticketing process for high school dances, ensuring a secure and flexible experience for both users and administrators.</p><div id="cc85ab47-5ae8-4ba9-b372-85352e1da336" class="column-list"><div id="02acd63c-aba1-47e6-8b3a-8d1bfb785100" style="width:56.25%" class="column"><h3 id="cd89842b-30c2-45d4-a4c5-d600da1aceb7" class="">Deliverables:</h3><hr id="b94a4182-482c-4e1f-b1a8-0b6ae5066c70"/><ul id="979bc3ff-ec6a-40ec-b9a6-4c9eb77c16a3" class="bulleted-list"><li style="list-style-type:disc"><strong>UI/UX Design</strong><ul id="c06dcd51-9540-470b-8bbc-45106a8b2ebb" class="bulleted-list"><li style="list-style-type:circle">User Journeys and Task flow</li></ul><ul id="6bd39ccc-be55-42be-ba5f-332259a1b0f1" class="bulleted-list"><li style="list-style-type:circle">Low Fidelity Wireframes</li></ul><ul id="8b18ade9-4275-4915-b484-e46c98a916ab" class="bulleted-list"><li style="list-style-type:circle">High FIdelity Mockups and Prototypes</li></ul><ul id="c6328ed0-79f5-4a70-9abb-5e34eb275eb3" class="bulleted-list"><li style="list-style-type:circle">Usability Testing</li></ul><p id="33b24778-e35c-4dfe-b2ed-0270e6b75640" class="">
+</p></li></ul></div><div id="d96e5f5f-6f97-4cdf-aa08-16611d90bf35" style="width:43.75%" class="column"><h3 id="07620664-5b26-40e8-bc59-b66b8bd0de63" class="">My Roles:</h3><hr id="b2d1e63f-8c4d-4119-98c1-21d9f8affed7"/><ul id="4199581a-8c9f-4218-bcf5-bc21b6656254" class="bulleted-list"><li style="list-style-type:disc">User Experience (UX) Designer</li></ul><ul id="50949796-5350-4831-943f-c7658159f43d" class="bulleted-list"><li style="list-style-type:disc">User Interface (UI) Designer</li></ul><h3 id="637ef039-3263-40dc-a9bf-678bd21bcb8f" class="">Specifications:</h3><hr id="cc02d638-6fa4-4a76-a398-8b85c77463c3"/><p id="74dcdbe2-bce6-4eba-8566-275a9d6ec256" class=""><strong>Duration: 2</strong> Week Design Sprint</p><p id="07351108-1ebf-43df-baee-b0a1e156590a" class=""><strong>Tools:</strong> Adobe XD, Figma</p><p id="a80dd94f-2588-4e18-99d3-8e818fe5e041" class="">
+</p></div></div><hr id="19d80f02-3dca-4280-b594-95020ca52f9e"/><figure id="3df26dc5-8a8b-470e-859d-a634a6a402a7" class="image"><a href="https://images.unsplash.com/photo-1630395822970-acd6a691d97e?ixlib=rb-4.0.3&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb"><img style="width:100%" src="https://images.unsplash.com/photo-1630395822970-acd6a691d97e?ixlib=rb-4.0.3&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb"/></a></figure><h2 id="ea140c9a-0788-47d9-ad34-cf91f8d92b5d" class="">Overview</h2><hr id="39519683-1ef8-4cb6-b6f9-1014c17f968a"/><p id="61b58e0f-1a6e-44a5-ba60-2ed346c3ec36" class="">Primary directive for this project was to move quickly and get into development as soon as possible. With the simplicity behind the project it was doable with careful research to ensure we didn’t need to backtrack any of the user flows or journey.</p><p id="e1c1565e-466b-49c3-8909-e3f1d581e672" class="">
+</p><h2 id="105a72bf-d728-48b9-a4d6-940e243e0e54" class="">Design Process</h2><hr id="d3c4e347-f8fd-4238-8452-bef9ed9d89e0"/><div id="23db8aae-ca14-4bf9-90cd-a58df95e6768" class="column-list"><div id="ac150e6d-d6f6-4bb9-96cf-2825633c511d" style="width:25%" class="column"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="af1d1e52-5acb-4e1f-b657-1e35db0e256a"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/book-closed_gray.svg"/></div><div style="width:100%">Research</div></figure></div><div id="395e5d87-a6df-4556-a85c-2dd53db289e5" style="width:25%" class="column"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="8b71c4dc-74a3-4a27-b1a2-9a9b12ed9c1c"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/map_gray.svg"/></div><div style="width:100%">Strategy</div></figure></div><div id="704688e9-b076-4b42-9ebe-5352500a2ab7" style="width:25%" class="column"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="9a1915aa-2551-481b-94cb-1703d06b47bd"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/color-palette_gray.svg"/></div><div style="width:100%">Design </div></figure></div><div id="fe7eb81e-f517-4fe9-872f-6285bd44bff6" style="width:25%" class="column"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="8303927b-5802-4a6c-906d-e10b781613c4"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/chemistry_gray.svg"/></div><div style="width:100%">Test</div></figure></div></div><hr id="247638e2-9cb6-482d-bc30-50032217d98d"/><h2 id="60fce9f0-cf31-4f7e-9ded-114a312bbcb7" class="">Research &amp; Define Problems</h2><hr id="c29a7c5e-f51e-4f60-b452-c5f28acbb9f3"/><p id="e84e60a2-490c-478f-908f-e39d8cfecfe3" class="">The client and I worked to build out a user flow diagram to outline the possible outcomes of scanning a ticket. Main concerns were allowing scanners to circumvent what could be hard locked conditions. They didn&#x27;t want people unable to enter events if the user ran into problems, rather the more important thing was to make sure and log every event to be reviewed later. </p><figure id="d41f134b-eddc-451d-b308-4a6d33bcd6f6" class="image"><a href="Event%20Management%20My%20School%20Dance%202bdd0f3fe39944d78b70e92b84ec8dd3/msd-flow.png"><img style="width:1775px" src="Event%20Management%20My%20School%20Dance%202bdd0f3fe39944d78b70e92b84ec8dd3/msd-flow.png"/></a></figure><h2 id="376926c3-337d-4caf-8c30-b959f3016942" class="">Strategy &amp; Analysis</h2><hr id="aca7474f-7492-48cd-8feb-90dfc6a6c067"/><ul id="b03e8cab-4bce-4277-8b24-f7f3dd21fd9b" class="bulleted-list"><li style="list-style-type:disc">Collaborative effort with client input and provided wireframes.</li></ul><ul id="9b298a01-20b8-4b4b-8424-778ec3802e0c" class="bulleted-list"><li style="list-style-type:disc">Emphasis on simplicity, large buttons, and clear text for user comfort.</li></ul><ul id="de8ab8f4-0221-44f8-8879-bbe9e503cbde" class="bulleted-list"><li style="list-style-type:disc">Early feedback prompted the addition of flexibility features for ticket management.</li></ul><h3 id="7021c6bb-2569-47ee-83ca-712743a06ec7" class="">Decisions</h3><ul id="0cb802cd-b71d-4d86-bad9-9093c6e8e850" class="bulleted-list"><li style="list-style-type:disc">Implemented a workflow to unblock and block tickets, providing users with enhanced flexibility.</li></ul><ul id="17717884-0d3c-493b-b4f6-f995a9c47a50" class="bulleted-list"><li style="list-style-type:disc">Added features to prevent ticket misuse, allowing one ticket per student.</li></ul><ul id="dce3cdab-77f7-4271-8801-d09732661fdd" class="bulleted-list"><li style="list-style-type:disc">Inclusion of a student ID picture for further security and verification.</li></ul><h2 id="c8ea22e3-849c-4a75-8e85-61e01aedd40e" class="">Design &amp; Prototype Solutions</h2><hr id="f509d251-2484-45de-a32a-40f23d7f844e"/><p id="1b8e6ee6-c115-44d0-9c41-e2257bf0fad8" class="">Primary User Journey - Check In/Out of event.</p><div id="4f198dac-c17b-40c7-abc4-7efddc8e6db4" class="column-list"><div id="f25b14bf-5cfe-4df8-9ca7-6941930a46d5" style="width:16.666666666666686%" class="column"><figure id="211f02b5-e3ca-4b07-9bae-63a0192c3115" class="image"><a href="Event%20Management%20My%20School%20Dance%202bdd0f3fe39944d78b70e92b84ec8dd3/Login.png"><img style="width:375px" src="Event%20Management%20My%20School%20Dance%202bdd0f3fe39944d78b70e92b84ec8dd3/Login.png"/></a></figure></div><div id="a6e216f0-3927-4e41-a5a5-0f7a6c8edd71" style="width:16.66666666666668%" class="column"><figure id="0e6e5734-9201-4e3a-b390-6435eb4db24c" class="image"><a href="Event%20Management%20My%20School%20Dance%202bdd0f3fe39944d78b70e92b84ec8dd3/Scan.png"><img style="width:375px" src="Event%20Management%20My%20School%20Dance%202bdd0f3fe39944d78b70e92b84ec8dd3/Scan.png"/></a></figure></div><div id="c85ea277-1419-409b-b9be-27a7ccc73b19" style="width:16.66666666666668%" class="column"><figure id="3d326840-7e65-475a-a600-fe3b1567443c" class="image"><a href="Event%20Management%20My%20School%20Dance%202bdd0f3fe39944d78b70e92b84ec8dd3/check_in.png"><img style="width:375px" src="Event%20Management%20My%20School%20Dance%202bdd0f3fe39944d78b70e92b84ec8dd3/check_in.png"/></a></figure></div><div id="889aa81f-64e7-4cc0-a567-ba5c92c4e2b3" style="width:16.66666666666668%" class="column"><figure id="932b25fa-9e1e-4a91-a14a-c5c9178b8b2e" class="image"><a href="Event%20Management%20My%20School%20Dance%202bdd0f3fe39944d78b70e92b84ec8dd3/scan_confirm__4.png"><img style="width:375px" src="Event%20Management%20My%20School%20Dance%202bdd0f3fe39944d78b70e92b84ec8dd3/scan_confirm__4.png"/></a></figure></div><div id="7ebae8d5-2f30-4888-abfa-81df017537f7" style="width:16.666666666666664%" class="column"><figure id="d0e86296-dc63-4bea-8e54-0449847a21f8" class="image"><a href="Event%20Management%20My%20School%20Dance%202bdd0f3fe39944d78b70e92b84ec8dd3/check_out.png"><img style="width:375px" src="Event%20Management%20My%20School%20Dance%202bdd0f3fe39944d78b70e92b84ec8dd3/check_out.png"/></a></figure></div><div id="a30c325e-1b1b-4d9f-8d02-a56d53d96f95" style="width:16.666666666666664%" class="column"><figure id="78508c3b-ce3d-4164-8957-327665599835" class="image"><a href="Event%20Management%20My%20School%20Dance%202bdd0f3fe39944d78b70e92b84ec8dd3/scan_confirm__5.png"><img style="width:375px" src="Event%20Management%20My%20School%20Dance%202bdd0f3fe39944d78b70e92b84ec8dd3/scan_confirm__5.png"/></a></figure></div></div><hr id="aea93e1e-559a-471b-9cf4-ecbe272e69fd"/><p id="966598d8-da43-47ee-81be-2539c80192aa" class="">Alternate User Journey - Blocked Tickets</p><div id="853ffc61-1457-42fa-87d8-4f5092b55750" class="column-list"><div id="c6c4556e-b483-4518-9a1b-2465f8ad9eed" style="width:16.666666666666668%" class="column"><figure id="46b30e68-d78f-4516-a54d-d5ad852d8693" class="image"><a href="Event%20Management%20My%20School%20Dance%202bdd0f3fe39944d78b70e92b84ec8dd3/block_ticket.png"><img style="width:375px" src="Event%20Management%20My%20School%20Dance%202bdd0f3fe39944d78b70e92b84ec8dd3/block_ticket.png"/></a></figure></div><div id="bb922899-afe0-470d-9fb5-05143e44c68e" style="width:16.666666666666664%" class="column"><figure id="827322bd-2f91-45a6-86e0-ec91beb505d2" class="image"><a href="Event%20Management%20My%20School%20Dance%202bdd0f3fe39944d78b70e92b84ec8dd3/scan_confirm__6.png"><img style="width:375px" src="Event%20Management%20My%20School%20Dance%202bdd0f3fe39944d78b70e92b84ec8dd3/scan_confirm__6.png"/></a></figure></div><div id="95699482-069f-4584-bc64-06f18e04f225" style="width:16.666666666666675%" class="column"><figure id="9333dbad-0191-4757-a741-f930522cddc9" class="image"><a href="Event%20Management%20My%20School%20Dance%202bdd0f3fe39944d78b70e92b84ec8dd3/unblock_ticket.png"><img style="width:375px" src="Event%20Management%20My%20School%20Dance%202bdd0f3fe39944d78b70e92b84ec8dd3/unblock_ticket.png"/></a></figure></div><div id="67bf5421-55ca-4ed7-befb-862edc24779d" style="width:16.66666666666668%" class="column"><figure id="5fc37177-e394-4376-88ba-abcca99652c0" class="image"><a href="Event%20Management%20My%20School%20Dance%202bdd0f3fe39944d78b70e92b84ec8dd3/scan_confirm__7.png"><img style="width:375px" src="Event%20Management%20My%20School%20Dance%202bdd0f3fe39944d78b70e92b84ec8dd3/scan_confirm__7.png"/></a></figure></div><div id="9ac6ad47-db88-4af1-8ff4-8812d77c863c" style="width:16.666666666666675%" class="column"><figure id="e54a29f4-79d5-4e91-a7ad-70a9dcb3bddf" class="image"><a href="Event%20Management%20My%20School%20Dance%202bdd0f3fe39944d78b70e92b84ec8dd3/admin_hold.png"><img style="width:336px" src="Event%20Management%20My%20School%20Dance%202bdd0f3fe39944d78b70e92b84ec8dd3/admin_hold.png"/></a></figure></div><div id="2275b411-6252-4387-a2a4-5028136462af" style="width:16.666666666666675%" class="column"><figure id="3a76590f-bf97-4f39-90b1-65226c544d5a" class="image"><a href="Event%20Management%20My%20School%20Dance%202bdd0f3fe39944d78b70e92b84ec8dd3/ticket_block.png"><img style="width:375px" src="Event%20Management%20My%20School%20Dance%202bdd0f3fe39944d78b70e92b84ec8dd3/ticket_block.png"/></a></figure></div></div><h2 id="7c06ebc9-29f7-4ad2-b207-100e6530c91b" class="">Test &amp; Iterate</h2><hr id="044fba81-9954-4207-8c37-377d5930553d"/><p id="07b20723-a197-4990-b7d0-67e0a8864f31" class=""><strong>Results:</strong></p><ul id="a2efdca9-2ecc-4b1f-b159-ab021b8b03dd" class="bulleted-list"><li style="list-style-type:disc">Enhanced flexibility and confidence for ticketing desk management.</li></ul><ul id="ce417539-9b66-4b47-97c3-ba60b57cda63" class="bulleted-list"><li style="list-style-type:disc">Positive client response to ease of use, large buttons, and added flexibility.</li></ul><p id="bc295e0c-7cfd-49e9-9c35-c35176dc7b08" class=""><strong>Key Features:</strong></p><ul id="ea99857b-6f77-4f21-b2c8-781b2a49d772" class="bulleted-list"><li style="list-style-type:disc">Unique database integration for checking tickets against a list of students.</li></ul><ul id="1a2e3d68-0cf4-45d4-83ea-9c71bcb52e0f" class="bulleted-list"><li style="list-style-type:disc">Inclusion of student ID pictures for visual verification.</li></ul><p id="6436b745-e1ba-47c8-b59c-a523ff2712a9" class=""><strong>User Experience:</strong></p><ul id="603b60a0-5487-426e-965a-a6c12edfd84e" class="bulleted-list"><li style="list-style-type:disc">Empowered users managing the ticketing desk with an intuitive and efficient system.</li></ul><h2 id="6451c813-c699-4c17-b362-1ebc881c3f26" class="">Lessons Learned/Final Thoughts</h2><hr id="289e7530-9549-4ecc-870d-1c44c4922835"/><p id="f8dfb790-4bc1-4dd1-91e7-57787cf33293" class="">MySchoolDance successfully addressed the challenges posed by high school dance ticketing, offering a secure, flexible, and user-friendly solution. The addition of features such as database integration and student ID pictures contributed to a positive user experience and increased security.</p><p id="57d7c288-38f3-4602-9d14-37616ed84fcb" class="">
+</p><p id="f6614b3d-99fd-42e9-bc50-75305128e2d6" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
